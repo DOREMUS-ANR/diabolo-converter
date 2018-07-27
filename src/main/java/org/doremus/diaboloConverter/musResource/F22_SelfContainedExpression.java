@@ -1,5 +1,6 @@
 package org.doremus.diaboloConverter.musResource;
 
+import org.apache.commons.lang3.StringUtils;
 import org.apache.jena.ontology.ObjectProperty;
 import org.apache.jena.ontology.OntClass;
 import org.apache.jena.rdf.model.Property;
@@ -273,7 +274,7 @@ public class F22_SelfContainedExpression extends DoremusResource {
       this.addNote("Duo");
 
     } else if (content.matches(ARTICLES_REGEX) || content.matches("\\d+")) {
-      title = content + " " + title.replace(outer, "");
+      title = StringUtils.capitalize(content) + " " + title.replace(outer, "");
     }
     // if not, normally it is part of the title
 

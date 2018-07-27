@@ -105,13 +105,13 @@ public class Utils {
 
     if (!StringUtils.isAllUpperCase(test)) return str;
 
-    return Arrays.stream(str.toLowerCase().split(" "))
+    return Arrays.stream(str.split(" "))
       .map(Utils::smartCapitalize)
       .collect(Collectors.joining(" "));
   }
 
   private static String smartCapitalize(String x) {
-    if (!RomanConverter.isRoman(x)) return StringUtils.capitalize(x);
+    if (!RomanConverter.isRoman(x)) return StringUtils.capitalize(x.toLowerCase());
     else return x;
   }
 }

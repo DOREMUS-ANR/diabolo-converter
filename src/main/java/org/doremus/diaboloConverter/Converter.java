@@ -27,7 +27,6 @@ import java.util.List;
 import java.util.Properties;
 
 public class Converter {
-  private static final String UTF8_BOM = "\uFEFF";
   public static Resource RADIO_FRANCE = ResourceFactory.createResource("http://data.doremus.org/organization/Radio_France");
   public static Resource DOREMUS = ResourceFactory.createResource("http://data.doremus.org/organization/DOREMUS");
   private static List<String> SKIP_NOTICE = Arrays.asList("824228", "519004", "627510", "715539", "451869",
@@ -69,7 +68,7 @@ public class Converter {
       if (Files.notExists(personPath)) Files.createDirectories(personPath);
       assert source != null;
       for (Person p : source.getPersons()) {
-//        if(!p.getId().equals("68400")) continue;
+//        if(!p.getId().equals("376661")) continue;
         if (p.isAPerson())
           parsePerson(p, personPath.toString());
         else if (p.isAGroup())
@@ -188,7 +187,7 @@ public class Converter {
   }
 
   private static void parseRecord(Oeuvre source, String outputFolder) {
-//    if(!Objects.equals(source.getId(), "149106"))return;
+//    if (!source.getId().equals("376661")) return;
     try {
       RecordConverter r = new RecordConverter(source);
       Model m = r.getModel();
