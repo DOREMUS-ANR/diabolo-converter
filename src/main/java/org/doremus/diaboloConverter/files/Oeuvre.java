@@ -29,6 +29,8 @@ public class Oeuvre extends DiaboloRecord {
   private String subTitle;
   @XmlElement(name = "AUTRE_TITRE_OEUVRE")
   private String variantTitle;
+  @XmlElement(name = "TITRE_DISQUE")
+  private String discTitle;
   @XmlElement(name = "VERS")
   private String version;
   @XmlElement(name = "NOTES")
@@ -122,5 +124,9 @@ public class Oeuvre extends DiaboloRecord {
 
   public List<Oeuvre> getSubWorks() {
     return SousOeuvres.subWorksOf(this.getId());
+  }
+
+  public String getDiscTitle() {
+    return discTitle;
   }
 }

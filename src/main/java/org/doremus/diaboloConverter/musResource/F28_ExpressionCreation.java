@@ -1,6 +1,7 @@
 package org.doremus.diaboloConverter.musResource;
 
 import org.apache.jena.rdf.model.Resource;
+import org.apache.jena.rdf.model.ResourceFactory;
 import org.apache.jena.vocabulary.RDF;
 import org.doremus.diaboloConverter.Converter;
 import org.doremus.diaboloConverter.RomanConverter;
@@ -19,6 +20,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class F28_ExpressionCreation extends DoremusResource {
+  private static final Resource BACH = ResourceFactory.createResource("http://data.doremus.org/artist/269cec9d-5025-3a8a-b2ef-4f7acb088f2b");
   private static Interps interps;
 
   private List<String> composer;
@@ -55,11 +57,11 @@ public class F28_ExpressionCreation extends DoremusResource {
 
     // composer
     int ipCount = 0;
-    for (Interp ip : getInterps().authorsOf(oeuvre.getId())) {
-
+    List<Interp> authorList = getInterps().authorsOf(oeuvre.getId());
+    for (Interp ip : authorList) {
       String function = ip.getFunction();
       E21_Person person = ip.getPerson();
-
+      composer.add(person.getUri().toString());
       String activityUri = this.uri + "/activity/" + ++ipCount;
       Resource activity = model.createResource(activityUri)
         .addProperty(RDF.type, CIDOC.E7_Activity)
@@ -68,13 +70,38 @@ public class F28_ExpressionCreation extends DoremusResource {
       if (function != null)
         activity.addProperty(MUS.U31_had_function, function);
 
-
       this.resource.addProperty(CIDOC.P9_consists_of, activity.asResource());
 
       if (ip.getDerivation() != null)
         this.derivation = ip.getDerivation();
     }
 
+    if (authorList.isEmpty()) {
+      Resource r = null;
+      String text = oeuvre.getDiscTitle();
+
+      if (oeuvre.getTitle().contains("BWV")) {
+        r = BACH;
+      } else if (text != null && text.contains(" : ")) {
+
+        String candidate = text.split(" : ", 2)[0]
+          .replace("Guiseppe", "Giuseppe");
+
+        r = E21_Person.getPersonFromDoremus(candidate, null);
+      }
+      if (r != null) {
+        composer.add(r.getURI());
+        String activityUri = this.uri + "/activity/" + ++ipCount;
+
+        Resource activity = model.createResource(activityUri)
+          .addProperty(RDF.type, CIDOC.E7_Activity)
+          .addProperty(CIDOC.P14_carried_out_by, r)
+          .addProperty(MUS.U31_had_function, "composer", "en");
+
+        this.resource.addProperty(CIDOC.P9_consists_of, activity.asResource());
+      }
+
+    }
     // period
     for (String period : oeuvre.getPeriod())
       this.resource.addProperty(CIDOC.P10_falls_within, model.createResource(toPeriodUri(period)));

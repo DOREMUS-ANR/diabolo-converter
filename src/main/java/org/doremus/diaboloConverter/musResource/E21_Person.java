@@ -9,6 +9,7 @@ import org.apache.jena.vocabulary.OWL;
 import org.apache.jena.vocabulary.RDF;
 import org.apache.jena.vocabulary.RDFS;
 import org.doremus.diaboloConverter.ConstructURI;
+import org.doremus.diaboloConverter.Converter;
 import org.doremus.diaboloConverter.ISNIWrapper;
 import org.doremus.diaboloConverter.Utils;
 import org.doremus.diaboloConverter.files.Person;
@@ -39,7 +40,12 @@ public class E21_Person extends DoremusResource {
 
   public E21_Person(String id) {
     String uriCache = cache.get(id);
-    if (uriCache == null || uriCache.isEmpty())
+    if (Utils.notEmptyString(uriCache) == null) {
+      Converter.parsePerson(id);
+      uriCache = cache.get(id);
+    }
+
+    if (Utils.notEmptyString(uriCache) == null)
       throw new RuntimeException("Unknow person: " + id);
 
     try {
@@ -80,7 +86,7 @@ public class E21_Person extends DoremusResource {
     return d.getLexicalForm().substring(0, 4);
   }
 
-  public String getIdentification() {
+  private String getIdentification() {
     if (lastName == null) return null;
     String identification = lastName;
     if (firstName != null) identification += ", " + firstName;
@@ -92,7 +98,7 @@ public class E21_Person extends DoremusResource {
     return identification;
   }
 
-  private Resource initResource() {
+  private void initResource() {
     this.resource = model.createResource(this.uri.toString());
     resource.addProperty(RDF.type, CIDOC.E21_Person);
 
@@ -116,7 +122,6 @@ public class E21_Person extends DoremusResource {
     }
 
     addNote(this.comment);
-    return resource;
   }
 
   private void addDate(Literal date, boolean isDeath) throws URISyntaxException {
@@ -175,7 +180,7 @@ public class E21_Person extends DoremusResource {
 
   }
 
-  public static void addToCache(String key, String value) {
+  static void addToCache(String key, String value) {
     cache.put(key, value);
     saveCache();
   }
@@ -194,12 +199,12 @@ public class E21_Person extends DoremusResource {
     }
   }
 
-  private boolean interlink() {
+  private void interlink() {
     // 1. search in doremus by name/date
-    Resource match = getPersonFromDoremus();
+    Resource match = getPersonFromDoremus(this.fullName, this.birthYear);
     if (match != null) {
       this.setUri(match.getURI());
-      return true;
+      return;
     }
 
     // 2. search in isni by name/date
@@ -211,28 +216,28 @@ public class E21_Person extends DoremusResource {
     ISNIRecord isniMatch = null;
     while (isniMatch == null && labelsToCheck.size() > 0) {
       String l = labelsToCheck.remove(0);
-      System.out.println("- " + l);
+//      System.out.println("- " + l);
       try {
         isniMatch = ISNIWrapper.search(l, this.birthYear);
       } catch (IOException e) {
-        return false;
+        return;
       }
     }
-    if (isniMatch == null) return false;
+    if (isniMatch == null) return;
 
     // 3. search in doremus by isni
     match = getPersonFromDoremus(isniMatch.uri);
     if (match != null) {
       this.setUri(match.getURI());
-      return true;
+      return;
     }
 
     // 4. add isni info
     this.isniEnrich(isniMatch);
-    return false;
   }
 
-  private Resource getPersonFromDoremus() {
+  public static Resource getPersonFromDoremus(String fullName, String birthYear) {
+    String nm = fullName.replaceAll("e", "[eèé]");
     String sparql =
       "PREFIX ecrm: <" + CIDOC.getURI() + ">\n" +
         "PREFIX foaf: <" + FOAF.getURI() + ">\n" +
@@ -241,10 +246,10 @@ public class E21_Person extends DoremusResource {
         "SELECT DISTINCT ?s " +
         "FROM <http://data.doremus.org/bnf> " +
         "WHERE { " +
-        "?s a ecrm:E21_Person; foaf:name \"" + this.fullName + "\"." +
-        (this.birthYear != null ? "?s schema:birthDate ?date. FILTER regex(str(?date), \"" + this.birthYear +
+        "?s a ecrm:E21_Person; foaf:name ?name." +
+        (birthYear != null ? "?s schema:birthDate ?date. FILTER regex(str(?date), \"" + birthYear +
           "\")\n" : "") +
-        "}";
+        "FILTER REGEX(?name, \"(?i)" + nm + "\")\n}";
 
     return (Resource) Utils.queryDoremus(sparql, "s");
   }
@@ -259,7 +264,7 @@ public class E21_Person extends DoremusResource {
   }
 
 
-  public void isniEnrich(ISNIRecord isni) {
+  private void isniEnrich(ISNIRecord isni) {
     this.addPropertyResource(OWL.sameAs, isni.uri);
     this.addPropertyResource(OWL.sameAs, isni.getViafURI());
     this.addPropertyResource(OWL.sameAs, isni.getMusicBrainzUri());

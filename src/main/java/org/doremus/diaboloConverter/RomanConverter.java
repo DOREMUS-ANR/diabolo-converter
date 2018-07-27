@@ -57,4 +57,7 @@ public class RomanConverter {
   }
 
 
+  public static boolean isRoman(String num) {
+   return toNumerical(num) != 0;
+  }
 }

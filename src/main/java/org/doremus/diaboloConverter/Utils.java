@@ -2,21 +2,21 @@ package org.doremus.diaboloConverter;
 
 import org.apache.commons.lang3.StringUtils;
 import org.apache.jena.datatypes.xsd.XSDDatatype;
-import org.apache.jena.datatypes.xsd.impl.XSDDateType;
 import org.apache.jena.query.*;
 import org.apache.jena.rdf.model.Literal;
 import org.apache.jena.rdf.model.RDFNode;
 import org.apache.jena.rdf.model.ResourceFactory;
-import org.doremus.diaboloConverter.musResource.E52_TimeSpan;
 
 import java.util.Arrays;
-import java.util.Date;
 import java.util.List;
 import java.util.Objects;
+import java.util.regex.Pattern;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 public class Utils {
+  private static final String BRACKETS_REGEX = "\\(([^(]+)\\)";
+  public static final Pattern BRACKETS_PATTERN = Pattern.compile(BRACKETS_REGEX);
 
   public static QuerySolution queryDoremus(String sparql) {
     Query query = QueryFactory.create();
@@ -89,5 +89,29 @@ public class Utils {
       .collect(Collectors.toList());
     if (parts.size() < 1) return null;
     return String.join(" ", parts);
+  }
+
+  public static String fixCase(String str) {
+    return fixCase(str, false);
+  }
+
+  public static String fixCase(String str, boolean numberIncluded) {
+    str = notEmptyString(str);
+    if (str == null) return null;
+
+    String test = str.replaceAll("[^\\w]", "")
+      .replaceAll("(WoO|Kaul|Hob)", "");
+    if (numberIncluded) test = test.replaceAll("\\d", "");
+
+    if (!StringUtils.isAllUpperCase(test)) return str;
+
+    return Arrays.stream(str.toLowerCase().split(" "))
+      .map(Utils::smartCapitalize)
+      .collect(Collectors.joining(" "));
+  }
+
+  private static String smartCapitalize(String x) {
+    if (!RomanConverter.isRoman(x)) return StringUtils.capitalize(x);
+    else return x;
   }
 }

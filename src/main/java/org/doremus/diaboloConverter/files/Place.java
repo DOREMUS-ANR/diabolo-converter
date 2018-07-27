@@ -9,15 +9,10 @@ import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.regex.Matcher;
-import java.util.regex.Pattern;
-
-import static org.doremus.diaboloConverter.Utils.notEmptyString;
 
 @XmlAccessorType(XmlAccessType.FIELD)
 
 public class Place extends DiaboloRecord {
-  private static final String BRACKETS_REGEX = "\\(([^(]+)\\)";
-  private static final Pattern BRACKETS_PATTERN = Pattern.compile(BRACKETS_REGEX);
   private static final String PREFIX_REGEX = "(?i)(.+ d['ue]s?|chateau|la|les?)";
   private static final String CITY_COUNTRY_REGEX = "(?i)ville (.+)";
   private static final String ISLAND_COUNTRY_REGEX = "(?i)iles? d'(.+)";
@@ -42,7 +37,7 @@ public class Place extends DiaboloRecord {
   }
 
   public String getComment() {
-    String c = notEmptyString(comment);
+    String c = Utils.notEmptyString(comment);
     if (c == null) return null;
     return c.replaceAll("\\s+", " ");
   }
@@ -57,7 +52,7 @@ public class Place extends DiaboloRecord {
     this.label = originalLabel;
 
     // VALETTE (LA) (VILLE)
-    Matcher m = BRACKETS_PATTERN.matcher(label);
+    Matcher m = Utils.BRACKETS_PATTERN.matcher(label);
     while (m.find()) {
       String content = m.group(1).trim();
       label = label.replace(m.group(0), "").trim();

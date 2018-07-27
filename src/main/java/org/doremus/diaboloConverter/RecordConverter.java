@@ -41,7 +41,7 @@ public class RecordConverter {
 
 
     F28_ExpressionCreation f28 = new F28_ExpressionCreation(source, false);
-    F22_SelfContainedExpression f22 = new F22_SelfContainedExpression(source);
+    F22_SelfContainedExpression f22 = new F22_SelfContainedExpression(source, f28.getComposers());
     F14_IndividualWork f14 = new F14_IndividualWork(source);
     F15_ComplexWork f15 = new F15_ComplexWork(source);
 

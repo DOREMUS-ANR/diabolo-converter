@@ -52,8 +52,6 @@ public abstract class DoremusResource {
     }
   }
 
-  static int counter = 0;
-
   protected void setUri(String uri) {
     if (this.uri != null && uri.equals(this.uri.toString())) return;
 

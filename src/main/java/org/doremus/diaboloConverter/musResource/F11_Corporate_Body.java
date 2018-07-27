@@ -1,18 +1,16 @@
 package org.doremus.diaboloConverter.musResource;
 
-import org.apache.commons.lang3.StringUtils;
 import org.apache.jena.rdf.model.Literal;
 import org.apache.jena.rdf.model.Resource;
 import org.apache.jena.vocabulary.RDF;
 import org.apache.jena.vocabulary.RDFS;
+import org.doremus.diaboloConverter.Utils;
 import org.doremus.diaboloConverter.files.Person;
 import org.doremus.ontology.CIDOC;
 import org.doremus.ontology.FRBROO;
 
 import java.net.URI;
 import java.net.URISyntaxException;
-import java.util.Arrays;
-import java.util.stream.Collectors;
 
 public class F11_Corporate_Body extends DoremusResource {
   private String name;
@@ -21,7 +19,7 @@ public class F11_Corporate_Body extends DoremusResource {
   public F11_Corporate_Body(Person record) throws NullPointerException {
     super(record.getId());
     this.record = record;
-    this.name = fixCase(record.getLabel());
+    this.name = Utils.fixCase(record.getLabel());
     if (this.name == null) throw new NullPointerException("The name of a Corporate Body cannot be null");
     this.birthDate = record.getFormationDate();
 
@@ -44,16 +42,6 @@ public class F11_Corporate_Body extends DoremusResource {
     return name;
   }
 
-  private String fixCase(String str) {
-    if (str == null) return null;
-    str = str.trim();
-    if (str.isEmpty()) return null;
-    if (!StringUtils.isAllUpperCase(str.replaceAll("[^\\w]", ""))) return str;
-
-    return Arrays.stream(str.toLowerCase().split(" "))
-      .map(StringUtils::capitalize)
-      .collect(Collectors.joining(" "));
-  }
 
   private Resource initResource() throws URISyntaxException {
     Person r = (Person) record;
