@@ -33,11 +33,11 @@ public class Converter {
     "621325", "357546");
 
   static Properties properties;
-  static String dataFolderPath;
   public static String inputFolderPath;
   private static String outputFolderPath;
   private static boolean modifiedOut = false;
 
+  @SuppressWarnings("ResultOfMethodCallIgnored")
   public static void main(String[] args) throws IOException {
     // INIT
     System.out.println("\n\n******* Running Diabolo Converter *********");
@@ -68,7 +68,6 @@ public class Converter {
       if (Files.notExists(personPath)) Files.createDirectories(personPath);
       assert source != null;
       for (Person p : source.getPersons()) {
-//        if(!p.getId().equals("376661")) continue;
         if (p.isAPerson())
           parsePerson(p, personPath.toString());
         else if (p.isAGroup())
@@ -102,26 +101,9 @@ public class Converter {
     assert source != null;
     for (Oeuvre work : source.getWorks()) {
       if (SKIP_NOTICE.contains(work.getId())) continue;
-//      System.out.println(work.getId());
       parseRecord(work, workPath.toString());
     }
 
-//    new File(outputFolderPath + "/item").mkdirs();
-//
-
-//
-//    if (properties.getProperty("organizations").equals("true")) {
-//      File organizFolder = new File(Paths.get(dataFolderPath, "MORALE").toString());
-//      new File(outputFolderPath + "/organization").mkdirs();
-//      for (File p : organizFolder.listFiles())
-//        parseOrganization(p, outputFolderPath + "/organization");
-//    }
-//
-//    // MAG_CONTENU is the first folder to parse
-//    File mcFolder = new File(Paths.get(dataFolderPath, "MAG_CONTENU").toString());
-//    for (File mc : mcFolder.listFiles()) {
-//      parseRecord(mc, outputFolderPath + "/item");
-//    }
   }
 
   public static void parsePerson(String id) {
@@ -187,7 +169,10 @@ public class Converter {
   }
 
   private static void parseRecord(Oeuvre source, String outputFolder) {
-//    if (!source.getId().equals("376661")) return;
+//    if (Integer.parseInt(source.getId()) < 398479) return;
+    System.out.println(source.getId());
+    File out = new File(Paths.get(outputFolder, source.getId() + ".ttl").toString());
+    if (out.exists()) return;
     try {
       RecordConverter r = new RecordConverter(source);
       Model m = r.getModel();

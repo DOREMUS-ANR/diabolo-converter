@@ -163,7 +163,7 @@ public class F22_SelfContainedExpression extends DoremusResource {
 
   private String parseTitle(String title) {
     Matcher m = Utils.BRACKETS_PATTERN.matcher(title);
-    if (m.find())
+    while (m.find())
       title = processBrackets(title, m);
 
     String text = title;
@@ -278,9 +278,6 @@ public class F22_SelfContainedExpression extends DoremusResource {
     }
     // if not, normally it is part of the title
 
-    Matcher m2 = Utils.BRACKETS_PATTERN.matcher(title);
-    if (m2.find()) return processBrackets(title, m);
-
     return title.replaceAll("\\s+", " ");
   }
 
@@ -335,10 +332,10 @@ public class F22_SelfContainedExpression extends DoremusResource {
       .addProperty(RDF.type, MUS.M2_Opus_Statement)
       .addProperty(CIDOC.P3_has_note, note)
       .addProperty(RDFS.label, note)
-      .addProperty(numProp, number);
+      .addProperty(numProp, Utils.toSafeNumLiteral(number));
 
     if (subnumber != null)
-      M2OpusStatement.addProperty(subProp, subnumber);
+      M2OpusStatement.addProperty(subProp, Utils.toSafeNumLiteral(subnumber));
 
     this.resource.addProperty(MUS.U17_has_opus_statement, M2OpusStatement);
   }
