@@ -43,7 +43,7 @@ public class NomCom {
 
   private static void init() {
     File input = new File(Paths.get(Converter.inputFolderPath, "RÇfÇrentiels", "NOMCOM.xml").toString());
-    File inputM = new File(Paths.get(Converter.inputFolderPath, "Notices DIABOLO", "N33TCD_DESC_NOMS.xml").toString());
+    File inputM = new File(Paths.get(Converter.inputFolderPath, "Notices DIABOLO", "N33TCD_DESC_COMM.xml").toString());
 
     try {
       list = DiaboloRecord.toDictionary(input, "DORIS_KEY", "DE");

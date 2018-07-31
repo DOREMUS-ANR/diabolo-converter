@@ -16,10 +16,10 @@ public class F15_ComplexWork extends DoremusResource {
     this.resource.addProperty(RDF.type, FRBROO.F15_Complex_Work)
       .addProperty(MUS.U94_has_work_type, "musical work");
 
-//    for (String n : NomCom.getNomComOf(source.getId()))
-//      if (n.matches(TOPIC_REGEX))
-//        this.resource.addProperty(CIDOC.P129_is_about, n);
-//
+    for (String n : NomCom.getNomComOf(source.getId()))
+      if (n.matches(TOPIC_REGEX))
+        this.resource.addProperty(CIDOC.P129_is_about, n);
+
     for (E21_Person n : NomCom.getNomPropOf(source.getId()))
         this.resource.addProperty(MUS.U21_is_about_actor, n.asResource());
 

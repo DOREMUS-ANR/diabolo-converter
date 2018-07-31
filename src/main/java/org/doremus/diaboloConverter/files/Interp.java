@@ -22,6 +22,14 @@ public class Interp extends DiaboloRecord {
   private Function function = null;
   private E21_Person person = null;
 
+  public Interp() {
+  }
+
+  public Interp(String id) {
+    this.id = id;
+    this.funct = "createur";
+  }
+
   @Override
   public String getId() {
     return id;

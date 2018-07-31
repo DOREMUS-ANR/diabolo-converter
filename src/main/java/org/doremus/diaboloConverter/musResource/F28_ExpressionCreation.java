@@ -3,32 +3,27 @@ package org.doremus.diaboloConverter.musResource;
 import org.apache.jena.rdf.model.Resource;
 import org.apache.jena.rdf.model.ResourceFactory;
 import org.apache.jena.vocabulary.RDF;
-import org.doremus.diaboloConverter.Converter;
 import org.doremus.diaboloConverter.RomanConverter;
 import org.doremus.diaboloConverter.files.Interp;
-import org.doremus.diaboloConverter.files.Interps;
 import org.doremus.diaboloConverter.files.Oeuvre;
 import org.doremus.ontology.CIDOC;
 import org.doremus.ontology.FRBROO;
 import org.doremus.ontology.MUS;
 
-import java.io.File;
 import java.net.URI;
 import java.net.URISyntaxException;
-import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
 
 public class F28_ExpressionCreation extends DoremusResource {
   private static final Resource BACH = ResourceFactory.createResource("http://data.doremus.org/artist/269cec9d-5025-3a8a-b2ef-4f7acb088f2b");
-  private static Interps interps;
 
   private List<String> composer;
   private String derivation;
 
-  public F28_ExpressionCreation(Oeuvre omu, boolean createAPerformancePlan) {
-    super(omu, getId(omu.getId(), createAPerformancePlan));
-    this.record = omu;
+  public F28_ExpressionCreation(Oeuvre oeuvre, boolean createAPerformancePlan) {
+    super(oeuvre, getId(oeuvre.getId(), createAPerformancePlan));
+    this.record = oeuvre;
     this.resource.addProperty(RDF.type, FRBROO.F28_Expression_Creation);
 
     if (createAPerformancePlan) parsePerformancePlan();
@@ -57,7 +52,7 @@ public class F28_ExpressionCreation extends DoremusResource {
 
     // composer
     int ipCount = 0;
-    List<Interp> authorList = getInterps().authorsOf(oeuvre.getId());
+    List<Interp> authorList = oeuvre.getAuthors();
     for (Interp ip : authorList) {
       String function = ip.getFunction();
       E21_Person person = ip.getPerson();
@@ -115,13 +110,6 @@ public class F28_ExpressionCreation extends DoremusResource {
     return "http://data.doremus.org/period/%%_century".replace("%%", Integer.toString(x));
   }
 
-  private static Interps getInterps() {
-    if (interps == null) {
-      File input = new File(Paths.get(Converter.inputFolderPath, "Notices DIABOLO", "N33TCD_INTERPS.xml").toString());
-      interps = Interps.fromFile(input);
-    }
-    return interps;
-  }
 
   public String getDerivation() {
     return derivation;

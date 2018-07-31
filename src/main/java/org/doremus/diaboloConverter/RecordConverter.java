@@ -99,7 +99,7 @@ public class RecordConverter {
       F22_SelfContainedExpression f22c = new F22_SelfContainedExpression(w);
       f14c.add(f22c);
       f14.add(f14c);
-      if (w.containsAnyDate()) {
+      if (w.containsAnyDate() || w.getAuthors() != null) {
         F28_ExpressionCreation f28c = new F28_ExpressionCreation(w, false);
         f28.add(f14c).add(f22c);
         f28.add(f28c);

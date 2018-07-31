@@ -154,13 +154,11 @@ public class F22_SelfContainedExpression extends DoremusResource {
             else if (hasRecit) label += " RECIT";
             else label = label.replaceAll("\\+$", "").trim();
           }
-          this.add(label, MUS.M19_Categorization, MUS.U19_is_categorized_as);
+          this.add(label, MUS.M5_Genre, MUS.U12_has_genre);
           break;
         case "religion":
           this.add(g.getLabel(), MUS.M40_Context, MUS.U63_has_religious_context);
       }
-
-      this.resource.addProperty(MUS.U12_has_genre, model.createResource(g.getGenreUri()));
     }
 
     if (oeuvre.isOriginalVersion())

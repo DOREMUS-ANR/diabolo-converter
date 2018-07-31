@@ -129,4 +129,9 @@ public class Oeuvre extends DiaboloRecord {
   public String getDiscTitle() {
     return discTitle;
   }
+
+  public List<Interp> getAuthors() {
+    return Interps.authorsOf(this.getId());
+  }
+
 }
