@@ -2,7 +2,8 @@
 package org.doremus.ontology;
 
 import org.apache.jena.ontology.*;
-import org.apache.jena.rdf.model.*;
+import org.apache.jena.rdf.model.ModelFactory;
+import org.apache.jena.rdf.model.Resource;
 
 /**
  * Vocabulary definitions from https://raw.githubusercontent.com/DOREMUS-ANR/doremus-ontology/master/doremus.ttl
@@ -13,7 +14,7 @@ public class MUS {
     private static OntModel m_model = ModelFactory.createOntologyModel( OntModelSpec.OWL_MEM, null );
 
     /** <p>The namespace of the vocabulary as a string</p> */
-    public static final String NS = "http://data.doremus.org/org.doremus.ontology#";
+    public static final String NS = "http://data.doremus.org/ontology#";
 
     /** <p>The namespace of the vocabulary as a string</p>
      *  @see #NS */
@@ -25,728 +26,728 @@ public class MUS {
     /** <p>The org.doremus.ontology's owl:versionInfo as a string</p> */
     public static final String VERSION_INFO = "v0.2";
 
-    public static final ObjectProperty CLI198i_should_be_container_of = m_model.createObjectProperty( "http://data.doremus.org/org.doremus.ontology#CLI198i_should_be_container_of" );
+    public static final ObjectProperty CLI198i_should_be_container_of = m_model.createObjectProperty( "http://data.doremus.org/ontology#CLI198i_should_be_container_of" );
 
-    public static final ObjectProperty CLU197_should_have_binding = m_model.createObjectProperty( "http://data.doremus.org/org.doremus.ontology#CLU197_should_have_binding" );
+    public static final ObjectProperty CLU197_should_have_binding = m_model.createObjectProperty( "http://data.doremus.org/ontology#CLU197_should_have_binding" );
 
-    public static final ObjectProperty CLU197i_should_be_binding_of = m_model.createObjectProperty( "http://data.doremus.org/org.doremus.ontology#CLU197i_should_be_binding_of" );
+    public static final ObjectProperty CLU197i_should_be_binding_of = m_model.createObjectProperty( "http://data.doremus.org/ontology#CLU197i_should_be_binding_of" );
 
-    public static final ObjectProperty CLU198_should_have_container = m_model.createObjectProperty( "http://data.doremus.org/org.doremus.ontology#CLU198_should_have_container" );
+    public static final ObjectProperty CLU198_should_have_container = m_model.createObjectProperty( "http://data.doremus.org/ontology#CLU198_should_have_container" );
 
-    public static final ObjectProperty CLU206_should_have_media_type = m_model.createObjectProperty( "http://data.doremus.org/org.doremus.ontology#CLU206_should_have_media_type" );
+    public static final ObjectProperty CLU206_should_have_media_type = m_model.createObjectProperty( "http://data.doremus.org/ontology#CLU206_should_have_media_type" );
 
-    public static final ObjectProperty CLU206i_should_be_media_type_of = m_model.createObjectProperty( "http://data.doremus.org/org.doremus.ontology#CLU206i_should_be_media_type_of" );
+    public static final ObjectProperty CLU206i_should_be_media_type_of = m_model.createObjectProperty( "http://data.doremus.org/ontology#CLU206i_should_be_media_type_of" );
 
-    public static final ObjectProperty CLU207_should_have_carrier_type = m_model.createObjectProperty( "http://data.doremus.org/org.doremus.ontology#CLU207_should_have_carrier_type" );
+    public static final ObjectProperty CLU207_should_have_carrier_type = m_model.createObjectProperty( "http://data.doremus.org/ontology#CLU207_should_have_carrier_type" );
 
-    public static final ObjectProperty CLU207i_should_be_carrier_type_of = m_model.createObjectProperty( "http://data.doremus.org/org.doremus.ontology#CLU207i_should_be_carrier_type_of" );
+    public static final ObjectProperty CLU207i_should_be_carrier_type_of = m_model.createObjectProperty( "http://data.doremus.org/ontology#CLU207i_should_be_carrier_type_of" );
 
-    public static final ObjectProperty CLU210_should_have_pagination = m_model.createObjectProperty( "http://data.doremus.org/org.doremus.ontology#CLU210_should_have_pagination" );
+    public static final ObjectProperty CLU210_should_have_pagination = m_model.createObjectProperty( "http://data.doremus.org/ontology#CLU210_should_have_pagination" );
 
-    public static final ObjectProperty CLU210i_should_be_pagination_of = m_model.createObjectProperty( "http://data.doremus.org/org.doremus.ontology#CLU210i_should_be_pagination_of" );
+    public static final ObjectProperty CLU210i_should_be_pagination_of = m_model.createObjectProperty( "http://data.doremus.org/ontology#CLU210i_should_be_pagination_of" );
 
-    public static final ObjectProperty CLU217_should_have_playing_speed = m_model.createObjectProperty( "http://data.doremus.org/org.doremus.ontology#CLU217_should_have_playing_speed" );
+    public static final ObjectProperty CLU217_should_have_playing_speed = m_model.createObjectProperty( "http://data.doremus.org/ontology#CLU217_should_have_playing_speed" );
 
-    public static final ObjectProperty CLU217i_should_be_playing_speed_of = m_model.createObjectProperty( "http://data.doremus.org/org.doremus.ontology#CLU217i_should_be_playing_speed_of" );
+    public static final ObjectProperty CLU217i_should_be_playing_speed_of = m_model.createObjectProperty( "http://data.doremus.org/ontology#CLU217i_should_be_playing_speed_of" );
 
-    public static final ObjectProperty CLU223_should_have_number_of_tape_tracks = m_model.createObjectProperty( "http://data.doremus.org/org.doremus.ontology#CLU223_should_have_number_of_tape_tracks" );
+    public static final ObjectProperty CLU223_should_have_number_of_tape_tracks = m_model.createObjectProperty( "http://data.doremus.org/ontology#CLU223_should_have_number_of_tape_tracks" );
 
-    public static final ObjectProperty CLU223i_should_be_number_of_tape_tracks_of = m_model.createObjectProperty( "http://data.doremus.org/org.doremus.ontology#CLU223i_should_be_number_of_tape_tracks_of" );
+    public static final ObjectProperty CLU223i_should_be_number_of_tape_tracks_of = m_model.createObjectProperty( "http://data.doremus.org/ontology#CLU223i_should_be_number_of_tape_tracks_of" );
 
-    public static final ObjectProperty CLU53_should_have_duration = m_model.createObjectProperty( "http://data.doremus.org/org.doremus.ontology#CLU53_should_have_duration" );
+    public static final ObjectProperty CLU53_should_have_duration = m_model.createObjectProperty( "http://data.doremus.org/ontology#CLU53_should_have_duration" );
 
-    public static final ObjectProperty CLU53i_should_be_duration_of = m_model.createObjectProperty( "http://data.doremus.org/org.doremus.ontology#CLU53i_should_be_duration_of" );
+    public static final ObjectProperty CLU53i_should_be_duration_of = m_model.createObjectProperty( "http://data.doremus.org/ontology#CLU53i_should_be_duration_of" );
 
-    public static final ObjectProperty M187i_is_multipart_monograph_statement_of = m_model.createObjectProperty( "http://data.doremus.org/org.doremus.ontology#M187i_is_multipart_monograph_statement_of" );
+    public static final ObjectProperty M187i_is_multipart_monograph_statement_of = m_model.createObjectProperty( "http://data.doremus.org/ontology#M187i_is_multipart_monograph_statement_of" );
 
-    public static final ObjectProperty M189i_is_main_series_statement_of = m_model.createObjectProperty( "http://data.doremus.org/org.doremus.ontology#M189i_is_main_series_statement_of" );
+    public static final ObjectProperty M189i_is_main_series_statement_of = m_model.createObjectProperty( "http://data.doremus.org/ontology#M189i_is_main_series_statement_of" );
 
-    public static final ObjectProperty U11_has_key = m_model.createObjectProperty( "http://data.doremus.org/org.doremus.ontology#U11_has_key" );
+    public static final ObjectProperty U11_has_key = m_model.createObjectProperty( "http://data.doremus.org/ontology#U11_has_key" );
 
-    public static final ObjectProperty U11i_is_key_of = m_model.createObjectProperty( "http://data.doremus.org/org.doremus.ontology#U11i_is_key_of" );
+    public static final ObjectProperty U11i_is_key_of = m_model.createObjectProperty( "http://data.doremus.org/ontology#U11i_is_key_of" );
 
-    public static final ObjectProperty U12_has_genre = m_model.createObjectProperty( "http://data.doremus.org/org.doremus.ontology#U12_has_genre" );
+    public static final ObjectProperty U12_has_genre = m_model.createObjectProperty( "http://data.doremus.org/ontology#U12_has_genre" );
 
-    public static final ObjectProperty U12i_is_genre_of = m_model.createObjectProperty( "http://data.doremus.org/org.doremus.ontology#U12i_is_genre_of" );
+    public static final ObjectProperty U12i_is_genre_of = m_model.createObjectProperty( "http://data.doremus.org/ontology#U12i_is_genre_of" );
 
-    public static final ObjectProperty U13_has_casting = m_model.createObjectProperty( "http://data.doremus.org/org.doremus.ontology#U13_has_casting" );
+    public static final ObjectProperty U13_has_casting = m_model.createObjectProperty( "http://data.doremus.org/ontology#U13_has_casting" );
 
-    public static final ObjectProperty U13i_is_casting_of = m_model.createObjectProperty( "http://data.doremus.org/org.doremus.ontology#U13i_is_casting_of" );
+    public static final ObjectProperty U13i_is_casting_of = m_model.createObjectProperty( "http://data.doremus.org/ontology#U13i_is_casting_of" );
 
-    public static final ObjectProperty U14_has_tempo = m_model.createObjectProperty( "http://data.doremus.org/org.doremus.ontology#U14_has_tempo" );
+    public static final ObjectProperty U14_has_tempo = m_model.createObjectProperty( "http://data.doremus.org/ontology#U14_has_tempo" );
 
-    public static final ObjectProperty U14i_is_tempo_of = m_model.createObjectProperty( "http://data.doremus.org/org.doremus.ontology#U14i_is_tempo_of" );
+    public static final ObjectProperty U14i_is_tempo_of = m_model.createObjectProperty( "http://data.doremus.org/ontology#U14i_is_tempo_of" );
 
-    public static final ObjectProperty U167_has_title_proper = m_model.createObjectProperty( "http://data.doremus.org/org.doremus.ontology#U167_has_title_proper" );
+    public static final ObjectProperty U167_has_title_proper = m_model.createObjectProperty( "http://data.doremus.org/ontology#U167_has_title_proper" );
 
-    public static final ObjectProperty U167i_is_title_proper_of = m_model.createObjectProperty( "http://data.doremus.org/org.doremus.ontology#U167i_is_title_proper_of" );
+    public static final ObjectProperty U167i_is_title_proper_of = m_model.createObjectProperty( "http://data.doremus.org/ontology#U167i_is_title_proper_of" );
 
-    public static final ObjectProperty U168_has_parallel_title = m_model.createObjectProperty( "http://data.doremus.org/org.doremus.ontology#U168_has_parallel_title" );
+    public static final ObjectProperty U168_has_parallel_title = m_model.createObjectProperty( "http://data.doremus.org/ontology#U168_has_parallel_title" );
 
-    public static final ObjectProperty U168i_is_parallel_title_of = m_model.createObjectProperty( "http://data.doremus.org/org.doremus.ontology#U168i_is_parallel_title_of" );
+    public static final ObjectProperty U168i_is_parallel_title_of = m_model.createObjectProperty( "http://data.doremus.org/ontology#U168i_is_parallel_title_of" );
 
-    public static final ObjectProperty U169_was_issued_under_label_name = m_model.createObjectProperty( "http://data.doremus.org/org.doremus.ontology#U169_was_issued_under_label_name" );
+    public static final ObjectProperty U169_was_issued_under_label_name = m_model.createObjectProperty( "http://data.doremus.org/ontology#U169_was_issued_under_label_name" );
 
-    public static final ObjectProperty U16_has_catalogue_statement = m_model.createObjectProperty( "http://data.doremus.org/org.doremus.ontology#U16_has_catalogue_statement" );
+    public static final ObjectProperty U16_has_catalogue_statement = m_model.createObjectProperty( "http://data.doremus.org/ontology#U16_has_catalogue_statement" );
 
-    public static final ObjectProperty U16i_is_catalogue_statement_of = m_model.createObjectProperty( "http://data.doremus.org/org.doremus.ontology#U16i_is_catalogue_statement_of" );
+    public static final ObjectProperty U16i_is_catalogue_statement_of = m_model.createObjectProperty( "http://data.doremus.org/ontology#U16i_is_catalogue_statement_of" );
 
-    public static final ObjectProperty U170_has_title_statement = m_model.createObjectProperty( "http://data.doremus.org/org.doremus.ontology#U170_has_title_statement" );
+    public static final ObjectProperty U170_has_title_statement = m_model.createObjectProperty( "http://data.doremus.org/ontology#U170_has_title_statement" );
 
-    public static final ObjectProperty U170i_is_title_statement_of = m_model.createObjectProperty( "http://data.doremus.org/org.doremus.ontology#U170i_is_title_statement_of" );
+    public static final ObjectProperty U170i_is_title_statement_of = m_model.createObjectProperty( "http://data.doremus.org/ontology#U170i_is_title_statement_of" );
 
-    public static final ObjectProperty U171_has_parallel_title_statement = m_model.createObjectProperty( "http://data.doremus.org/org.doremus.ontology#U171_has_parallel_title_statement" );
+    public static final ObjectProperty U171_has_parallel_title_statement = m_model.createObjectProperty( "http://data.doremus.org/ontology#U171_has_parallel_title_statement" );
 
-    public static final ObjectProperty U171i_is_parallel_title_statement_of = m_model.createObjectProperty( "http://data.doremus.org/org.doremus.ontology#U171i_is_parallel_title_statement_of" );
+    public static final ObjectProperty U171i_is_parallel_title_statement_of = m_model.createObjectProperty( "http://data.doremus.org/ontology#U171i_is_parallel_title_statement_of" );
 
-    public static final ObjectProperty U172_has_statement_of_responsibility_relatingt_to_title = m_model.createObjectProperty( "http://data.doremus.org/org.doremus.ontology#U172_has_statement_of_responsibility_relatingt_to_title" );
+    public static final ObjectProperty U172_has_statement_of_responsibility_relatingt_to_title = m_model.createObjectProperty( "http://data.doremus.org/ontology#U172_has_statement_of_responsibility_relatingt_to_title" );
 
-    public static final ObjectProperty U172i_is_statement_of_responsibility_relatingt_to_title_of = m_model.createObjectProperty( "http://data.doremus.org/org.doremus.ontology#U172i_is_statement_of_responsibility_relatingt_to_title_of" );
+    public static final ObjectProperty U172i_is_statement_of_responsibility_relatingt_to_title_of = m_model.createObjectProperty( "http://data.doremus.org/ontology#U172i_is_statement_of_responsibility_relatingt_to_title_of" );
 
-    public static final ObjectProperty U173_has_parallel_statement_of_responsibility_relating_to_title = m_model.createObjectProperty( "http://data.doremus.org/org.doremus.ontology#U173_has_parallel_statement_of_responsibility_relating_to_title" );
+    public static final ObjectProperty U173_has_parallel_statement_of_responsibility_relating_to_title = m_model.createObjectProperty( "http://data.doremus.org/ontology#U173_has_parallel_statement_of_responsibility_relating_to_title" );
 
-    public static final ObjectProperty U173i_is_parallel_statement_of_responsibility_relating_to_title_of = m_model.createObjectProperty( "http://data.doremus.org/org.doremus.ontology#U173i_is_parallel_statement_of_responsibility_relating_to_title_of" );
+    public static final ObjectProperty U173i_is_parallel_statement_of_responsibility_relating_to_title_of = m_model.createObjectProperty( "http://data.doremus.org/ontology#U173i_is_parallel_statement_of_responsibility_relating_to_title_of" );
 
-    public static final ObjectProperty U174_has_cast_statement = m_model.createObjectProperty( "http://data.doremus.org/org.doremus.ontology#U174_has_cast_statement" );
+    public static final ObjectProperty U174_has_cast_statement = m_model.createObjectProperty( "http://data.doremus.org/ontology#U174_has_cast_statement" );
 
-    public static final ObjectProperty U174i_is_cast_statement_of = m_model.createObjectProperty( "http://data.doremus.org/org.doremus.ontology#U174i_is_cast_statement_of" );
+    public static final ObjectProperty U174i_is_cast_statement_of = m_model.createObjectProperty( "http://data.doremus.org/ontology#U174i_is_cast_statement_of" );
 
-    public static final ObjectProperty U175_has_parallel_cast_statement = m_model.createObjectProperty( "http://data.doremus.org/org.doremus.ontology#U175_has_parallel_cast_statement" );
+    public static final ObjectProperty U175_has_parallel_cast_statement = m_model.createObjectProperty( "http://data.doremus.org/ontology#U175_has_parallel_cast_statement" );
 
-    public static final ObjectProperty U175i_is_parallel_cast_statement_of = m_model.createObjectProperty( "http://data.doremus.org/org.doremus.ontology#U175i_is_parallel_cast_statement_of" );
+    public static final ObjectProperty U175i_is_parallel_cast_statement_of = m_model.createObjectProperty( "http://data.doremus.org/ontology#U175i_is_parallel_cast_statement_of" );
 
-    public static final ObjectProperty U176_has_edition_statement = m_model.createObjectProperty( "http://data.doremus.org/org.doremus.ontology#U176_has_edition_statement" );
+    public static final ObjectProperty U176_has_edition_statement = m_model.createObjectProperty( "http://data.doremus.org/ontology#U176_has_edition_statement" );
 
-    public static final ObjectProperty U176i_is_edition_statement_of = m_model.createObjectProperty( "http://data.doremus.org/org.doremus.ontology#U176i_is_edition_statement_of" );
+    public static final ObjectProperty U176i_is_edition_statement_of = m_model.createObjectProperty( "http://data.doremus.org/ontology#U176i_is_edition_statement_of" );
 
-    public static final ObjectProperty U177_has_parallel_edition_statement = m_model.createObjectProperty( "http://data.doremus.org/org.doremus.ontology#U177_has_parallel_edition_statement" );
+    public static final ObjectProperty U177_has_parallel_edition_statement = m_model.createObjectProperty( "http://data.doremus.org/ontology#U177_has_parallel_edition_statement" );
 
-    public static final ObjectProperty U177i_is_parallel_edition_statement_of = m_model.createObjectProperty( "http://data.doremus.org/org.doremus.ontology#U177i_is_parallel_edition_statement_of" );
+    public static final ObjectProperty U177i_is_parallel_edition_statement_of = m_model.createObjectProperty( "http://data.doremus.org/ontology#U177i_is_parallel_edition_statement_of" );
 
-    public static final ObjectProperty U178_has_statement_of_responsibility_relating_to_edition = m_model.createObjectProperty( "http://data.doremus.org/org.doremus.ontology#U178_has_statement_of_responsibility_relating_to_edition" );
+    public static final ObjectProperty U178_has_statement_of_responsibility_relating_to_edition = m_model.createObjectProperty( "http://data.doremus.org/ontology#U178_has_statement_of_responsibility_relating_to_edition" );
 
-    public static final ObjectProperty U178i_is_statement_of_responsibility_relating_to_edition_of = m_model.createObjectProperty( "http://data.doremus.org/org.doremus.ontology#U178i_is_statement_of_responsibility_relating_to_edition_of" );
+    public static final ObjectProperty U178i_is_statement_of_responsibility_relating_to_edition_of = m_model.createObjectProperty( "http://data.doremus.org/ontology#U178i_is_statement_of_responsibility_relating_to_edition_of" );
 
-    public static final ObjectProperty U179_has_parallel_statement_of_responsibility_relating_to_edition = m_model.createObjectProperty( "http://data.doremus.org/org.doremus.ontology#U179_has_parallel_statement_of_responsibility_relating_to_edition" );
+    public static final ObjectProperty U179_has_parallel_statement_of_responsibility_relating_to_edition = m_model.createObjectProperty( "http://data.doremus.org/ontology#U179_has_parallel_statement_of_responsibility_relating_to_edition" );
 
-    public static final ObjectProperty U179i_is_parallel_statement_of_responsibility_relating_to_edition_of = m_model.createObjectProperty( "http://data.doremus.org/org.doremus.ontology#U179i_is_parallel_statement_of_responsibility_relating_to_edition_of" );
+    public static final ObjectProperty U179i_is_parallel_statement_of_responsibility_relating_to_edition_of = m_model.createObjectProperty( "http://data.doremus.org/ontology#U179i_is_parallel_statement_of_responsibility_relating_to_edition_of" );
 
-    public static final ObjectProperty U17_has_opus_statement = m_model.createObjectProperty( "http://data.doremus.org/org.doremus.ontology#U17_has_opus_statement" );
+    public static final ObjectProperty U17_has_opus_statement = m_model.createObjectProperty( "http://data.doremus.org/ontology#U17_has_opus_statement" );
 
-    public static final ObjectProperty U17i_is_opus_statement_of = m_model.createObjectProperty( "http://data.doremus.org/org.doremus.ontology#U17i_is_opus_statement_of" );
+    public static final ObjectProperty U17i_is_opus_statement_of = m_model.createObjectProperty( "http://data.doremus.org/ontology#U17i_is_opus_statement_of" );
 
-    public static final ObjectProperty U180_has_additional_edition_statement = m_model.createObjectProperty( "http://data.doremus.org/org.doremus.ontology#U180_has_additional_edition_statement" );
+    public static final ObjectProperty U180_has_additional_edition_statement = m_model.createObjectProperty( "http://data.doremus.org/ontology#U180_has_additional_edition_statement" );
 
-    public static final ObjectProperty U180i_is_additional_edition_statement_of = m_model.createObjectProperty( "http://data.doremus.org/org.doremus.ontology#U180i_is_additional_edition_statement_of" );
+    public static final ObjectProperty U180i_is_additional_edition_statement_of = m_model.createObjectProperty( "http://data.doremus.org/ontology#U180i_is_additional_edition_statement_of" );
 
-    public static final ObjectProperty U181_has_parallel_additional_edition_statement = m_model.createObjectProperty( "http://data.doremus.org/org.doremus.ontology#U181_has_parallel_additional_edition_statement" );
+    public static final ObjectProperty U181_has_parallel_additional_edition_statement = m_model.createObjectProperty( "http://data.doremus.org/ontology#U181_has_parallel_additional_edition_statement" );
 
-    public static final ObjectProperty U181i_is_parallel_additional_edition_statement_of = m_model.createObjectProperty( "http://data.doremus.org/org.doremus.ontology#U181i_is_parallel_additional_edition_statement_of" );
+    public static final ObjectProperty U181i_is_parallel_additional_edition_statement_of = m_model.createObjectProperty( "http://data.doremus.org/ontology#U181i_is_parallel_additional_edition_statement_of" );
 
-    public static final ObjectProperty U182_has_music_format_statement = m_model.createObjectProperty( "http://data.doremus.org/org.doremus.ontology#U182_has_music_format_statement" );
+    public static final ObjectProperty U182_has_music_format_statement = m_model.createObjectProperty( "http://data.doremus.org/ontology#U182_has_music_format_statement" );
 
-    public static final ObjectProperty U182i_is_music_format_statement_of = m_model.createObjectProperty( "http://data.doremus.org/org.doremus.ontology#U182i_is_music_format_statement_of" );
+    public static final ObjectProperty U182i_is_music_format_statement_of = m_model.createObjectProperty( "http://data.doremus.org/ontology#U182i_is_music_format_statement_of" );
 
-    public static final ObjectProperty U183_has_parallel_music_format_statement = m_model.createObjectProperty( "http://data.doremus.org/org.doremus.ontology#U183_has_parallel_music_format_statement" );
+    public static final ObjectProperty U183_has_parallel_music_format_statement = m_model.createObjectProperty( "http://data.doremus.org/ontology#U183_has_parallel_music_format_statement" );
 
-    public static final ObjectProperty U183i_is_parallel_music_format_statement_of = m_model.createObjectProperty( "http://data.doremus.org/org.doremus.ontology#U183i_is_parallel_music_format_statement_of" );
+    public static final ObjectProperty U183i_is_parallel_music_format_statement_of = m_model.createObjectProperty( "http://data.doremus.org/ontology#U183i_is_parallel_music_format_statement_of" );
 
-    public static final ObjectProperty U184_has_publication_statement = m_model.createObjectProperty( "http://data.doremus.org/org.doremus.ontology#U184_has_publication_statement" );
+    public static final ObjectProperty U184_has_publication_statement = m_model.createObjectProperty( "http://data.doremus.org/ontology#U184_has_publication_statement" );
 
-    public static final ObjectProperty U184i_is_publication_statement_of = m_model.createObjectProperty( "http://data.doremus.org/org.doremus.ontology#U184i_is_publication_statement_of" );
+    public static final ObjectProperty U184i_is_publication_statement_of = m_model.createObjectProperty( "http://data.doremus.org/ontology#U184i_is_publication_statement_of" );
 
-    public static final ObjectProperty U185_has_distribution_statement = m_model.createObjectProperty( "http://data.doremus.org/org.doremus.ontology#U185_has_distribution_statement" );
+    public static final ObjectProperty U185_has_distribution_statement = m_model.createObjectProperty( "http://data.doremus.org/ontology#U185_has_distribution_statement" );
 
-    public static final ObjectProperty U185i_is_distribution_statement_of = m_model.createObjectProperty( "http://data.doremus.org/org.doremus.ontology#U185i_is_distribution_statement_of" );
+    public static final ObjectProperty U185i_is_distribution_statement_of = m_model.createObjectProperty( "http://data.doremus.org/ontology#U185i_is_distribution_statement_of" );
 
-    public static final ObjectProperty U186_has_printing_or_manufacture_statement = m_model.createObjectProperty( "http://data.doremus.org/org.doremus.ontology#U186_has_printing_or_manufacture_statement" );
+    public static final ObjectProperty U186_has_printing_or_manufacture_statement = m_model.createObjectProperty( "http://data.doremus.org/ontology#U186_has_printing_or_manufacture_statement" );
 
-    public static final ObjectProperty U186i_is_printing_or_manufacture_statement_of = m_model.createObjectProperty( "http://data.doremus.org/org.doremus.ontology#U186i_is_printing_or_manufacture_statement_of" );
+    public static final ObjectProperty U186i_is_printing_or_manufacture_statement_of = m_model.createObjectProperty( "http://data.doremus.org/ontology#U186i_is_printing_or_manufacture_statement_of" );
 
-    public static final ObjectProperty U187_has_multipart_monographs_statement = m_model.createObjectProperty( "http://data.doremus.org/org.doremus.ontology#U187_has_multipart_monographs_statement" );
+    public static final ObjectProperty U187_has_multipart_monographs_statement = m_model.createObjectProperty( "http://data.doremus.org/ontology#U187_has_multipart_monographs_statement" );
 
-    public static final ObjectProperty U188_has_series_statement = m_model.createObjectProperty( "http://data.doremus.org/org.doremus.ontology#U188_has_series_statement" );
+    public static final ObjectProperty U188_has_series_statement = m_model.createObjectProperty( "http://data.doremus.org/ontology#U188_has_series_statement" );
 
-    public static final ObjectProperty U188i_is_series_statement_of = m_model.createObjectProperty( "http://data.doremus.org/org.doremus.ontology#U188i_is_series_statement_of" );
+    public static final ObjectProperty U188i_is_series_statement_of = m_model.createObjectProperty( "http://data.doremus.org/ontology#U188i_is_series_statement_of" );
 
-    public static final ObjectProperty U189_has_main_series_statement = m_model.createObjectProperty( "http://data.doremus.org/org.doremus.ontology#U189_has_main_series_statement" );
+    public static final ObjectProperty U189_has_main_series_statement = m_model.createObjectProperty( "http://data.doremus.org/ontology#U189_has_main_series_statement" );
 
-    public static final ObjectProperty U18_has_rhythmic_pattern = m_model.createObjectProperty( "http://data.doremus.org/org.doremus.ontology#U18_has_rhythmic_pattern" );
+    public static final ObjectProperty U18_has_rhythmic_pattern = m_model.createObjectProperty( "http://data.doremus.org/ontology#U18_has_rhythmic_pattern" );
 
-    public static final ObjectProperty U18i_is_rhythmic_pattern_of = m_model.createObjectProperty( "http://data.doremus.org/org.doremus.ontology#U18i_is_rhythmic_pattern_of" );
+    public static final ObjectProperty U18i_is_rhythmic_pattern_of = m_model.createObjectProperty( "http://data.doremus.org/ontology#U18i_is_rhythmic_pattern_of" );
 
-    public static final ObjectProperty U191_used_equalization_technique = m_model.createObjectProperty( "http://data.doremus.org/org.doremus.ontology#U191_used_equalization_technique" );
+    public static final ObjectProperty U191_used_equalization_technique = m_model.createObjectProperty( "http://data.doremus.org/ontology#U191_used_equalization_technique" );
 
-    public static final ObjectProperty U191i_was_technique_of_equalization = m_model.createObjectProperty( "http://data.doremus.org/org.doremus.ontology#U191i_was_technique_of_equalization" );
+    public static final ObjectProperty U191i_was_technique_of_equalization = m_model.createObjectProperty( "http://data.doremus.org/ontology#U191i_was_technique_of_equalization" );
 
-    public static final ObjectProperty U192_used_noise_reduction_technique = m_model.createObjectProperty( "http://data.doremus.org/org.doremus.ontology#U192_used_noise_reduction_technique" );
+    public static final ObjectProperty U192_used_noise_reduction_technique = m_model.createObjectProperty( "http://data.doremus.org/ontology#U192_used_noise_reduction_technique" );
 
-    public static final ObjectProperty U192i_was_technique_of_noise_reduction = m_model.createObjectProperty( "http://data.doremus.org/org.doremus.ontology#U192i_was_technique_of_noise_reduction" );
+    public static final ObjectProperty U192i_was_technique_of_noise_reduction = m_model.createObjectProperty( "http://data.doremus.org/ontology#U192i_was_technique_of_noise_reduction" );
 
-    public static final ObjectProperty U195_has_order_or_location_indication = m_model.createObjectProperty( "http://data.doremus.org/org.doremus.ontology#U195_has_order_or_location_indication" );
+    public static final ObjectProperty U195_has_order_or_location_indication = m_model.createObjectProperty( "http://data.doremus.org/ontology#U195_has_order_or_location_indication" );
 
-    public static final ObjectProperty U197_has_binding = m_model.createObjectProperty( "http://data.doremus.org/org.doremus.ontology#U197_has_binding" );
+    public static final ObjectProperty U197_has_binding = m_model.createObjectProperty( "http://data.doremus.org/ontology#U197_has_binding" );
 
-    public static final ObjectProperty U197i_is_binding_of = m_model.createObjectProperty( "http://data.doremus.org/org.doremus.ontology#U197i_is_binding_of" );
+    public static final ObjectProperty U197i_is_binding_of = m_model.createObjectProperty( "http://data.doremus.org/ontology#U197i_is_binding_of" );
 
-    public static final ObjectProperty U198_has_container = m_model.createObjectProperty( "http://data.doremus.org/org.doremus.ontology#U198_has_container" );
+    public static final ObjectProperty U198_has_container = m_model.createObjectProperty( "http://data.doremus.org/ontology#U198_has_container" );
 
-    public static final ObjectProperty U19_is_categorized_as = m_model.createObjectProperty( "http://data.doremus.org/org.doremus.ontology#U19_is_categorized_as" );
+    public static final ObjectProperty U19_is_categorized_as = m_model.createObjectProperty( "http://data.doremus.org/ontology#U19_is_categorized_as" );
 
-    public static final ObjectProperty U19i_categorizes = m_model.createObjectProperty( "http://data.doremus.org/org.doremus.ontology#U19i_categorizes" );
+    public static final ObjectProperty U19i_categorizes = m_model.createObjectProperty( "http://data.doremus.org/ontology#U19i_categorizes" );
 
-    public static final ObjectProperty U1_used_medium_of_performance = m_model.createObjectProperty( "http://data.doremus.org/org.doremus.ontology#U1_used_medium_of_performance" );
+    public static final ObjectProperty U1_used_medium_of_performance = m_model.createObjectProperty( "http://data.doremus.org/ontology#U1_used_medium_of_performance" );
 
-    public static final ObjectProperty U1i_medium_of_performance_was_used_in = m_model.createObjectProperty( "http://data.doremus.org/org.doremus.ontology#U1i_medium_of_performance_was_used_in" );
+    public static final ObjectProperty U1i_medium_of_performance_was_used_in = m_model.createObjectProperty( "http://data.doremus.org/ontology#U1i_medium_of_performance_was_used_in" );
 
-    public static final ObjectProperty U206_has_media_type = m_model.createObjectProperty( "http://data.doremus.org/org.doremus.ontology#U206_has_media_type" );
+    public static final ObjectProperty U206_has_media_type = m_model.createObjectProperty( "http://data.doremus.org/ontology#U206_has_media_type" );
 
-    public static final ObjectProperty U206i_is_media_type_of = m_model.createObjectProperty( "http://data.doremus.org/org.doremus.ontology#U206i_is_media_type_of" );
+    public static final ObjectProperty U206i_is_media_type_of = m_model.createObjectProperty( "http://data.doremus.org/ontology#U206i_is_media_type_of" );
 
-    public static final ObjectProperty U207_has_carrier_type = m_model.createObjectProperty( "http://data.doremus.org/org.doremus.ontology#U207_has_carrier_type" );
+    public static final ObjectProperty U207_has_carrier_type = m_model.createObjectProperty( "http://data.doremus.org/ontology#U207_has_carrier_type" );
 
-    public static final ObjectProperty U20_has_music_group_formation = m_model.createObjectProperty( "http://data.doremus.org/org.doremus.ontology#U20_has_music_group_formation" );
+    public static final ObjectProperty U20_has_music_group_formation = m_model.createObjectProperty( "http://data.doremus.org/ontology#U20_has_music_group_formation" );
 
-    public static final ObjectProperty U20i_is_music_group_formation_of = m_model.createObjectProperty( "http://data.doremus.org/org.doremus.ontology#U20i_is_music_group_formation_of" );
+    public static final ObjectProperty U20i_is_music_group_formation_of = m_model.createObjectProperty( "http://data.doremus.org/ontology#U20i_is_music_group_formation_of" );
 
-    public static final ObjectProperty U210_has_pagination = m_model.createObjectProperty( "http://data.doremus.org/org.doremus.ontology#U210_has_pagination" );
+    public static final ObjectProperty U210_has_pagination = m_model.createObjectProperty( "http://data.doremus.org/ontology#U210_has_pagination" );
 
-    public static final ObjectProperty U210i_is_pagination_of = m_model.createObjectProperty( "http://data.doremus.org/org.doremus.ontology#U210i_is_pagination_of" );
+    public static final ObjectProperty U210i_is_pagination_of = m_model.createObjectProperty( "http://data.doremus.org/ontology#U210i_is_pagination_of" );
 
-    public static final ObjectProperty U214_has_colour_content = m_model.createObjectProperty( "http://data.doremus.org/org.doremus.ontology#U214_has_colour_content" );
+    public static final ObjectProperty U214_has_colour_content = m_model.createObjectProperty( "http://data.doremus.org/ontology#U214_has_colour_content" );
 
-    public static final ObjectProperty U217_has_playing_speed = m_model.createObjectProperty( "http://data.doremus.org/org.doremus.ontology#U217_has_playing_speed" );
+    public static final ObjectProperty U217_has_playing_speed = m_model.createObjectProperty( "http://data.doremus.org/ontology#U217_has_playing_speed" );
 
-    public static final ObjectProperty U218_used_object_of_type_for_mastering = m_model.createObjectProperty( "http://data.doremus.org/org.doremus.ontology#U218_used_object_of_type_for_mastering" );
+    public static final ObjectProperty U218_used_object_of_type_for_mastering = m_model.createObjectProperty( "http://data.doremus.org/ontology#U218_used_object_of_type_for_mastering" );
 
-    public static final ObjectProperty U219_used_object_of_type_for_mixing = m_model.createObjectProperty( "http://data.doremus.org/org.doremus.ontology#U219_used_object_of_type_for_mixing" );
+    public static final ObjectProperty U219_used_object_of_type_for_mixing = m_model.createObjectProperty( "http://data.doremus.org/ontology#U219_used_object_of_type_for_mixing" );
 
-    public static final ObjectProperty U21_is_about_actor = m_model.createObjectProperty( "http://data.doremus.org/org.doremus.ontology#U21_is_about_actor" );
+    public static final ObjectProperty U21_is_about_actor = m_model.createObjectProperty( "http://data.doremus.org/ontology#U21_is_about_actor" );
 
-    public static final ObjectProperty U21i_actor_is_subject_of = m_model.createObjectProperty( "http://data.doremus.org/org.doremus.ontology#U21i_actor_is_subject_of" );
+    public static final ObjectProperty U21i_actor_is_subject_of = m_model.createObjectProperty( "http://data.doremus.org/ontology#U21i_actor_is_subject_of" );
 
-    public static final ObjectProperty U220_has_title_and_statement_of_responsibility = m_model.createObjectProperty( "http://data.doremus.org/org.doremus.ontology#U220_has_title_and_statement_of_responsibility" );
+    public static final ObjectProperty U220_has_title_and_statement_of_responsibility = m_model.createObjectProperty( "http://data.doremus.org/ontology#U220_has_title_and_statement_of_responsibility" );
 
-    public static final ObjectProperty U220i_is_title_and_statement_of_responsibility_of = m_model.createObjectProperty( "http://data.doremus.org/org.doremus.ontology#U220i_is_title_and_statement_of_responsibility_of" );
+    public static final ObjectProperty U220i_is_title_and_statement_of_responsibility_of = m_model.createObjectProperty( "http://data.doremus.org/ontology#U220i_is_title_and_statement_of_responsibility_of" );
 
-    public static final ObjectProperty U221_has_title_proper_of_series = m_model.createObjectProperty( "http://data.doremus.org/org.doremus.ontology#U221_has_title_proper_of_series" );
+    public static final ObjectProperty U221_has_title_proper_of_series = m_model.createObjectProperty( "http://data.doremus.org/ontology#U221_has_title_proper_of_series" );
 
-    public static final ObjectProperty U221i_is_title_proper_of_series_of = m_model.createObjectProperty( "http://data.doremus.org/org.doremus.ontology#U221i_is_title_proper_of_series_of" );
+    public static final ObjectProperty U221i_is_title_proper_of_series_of = m_model.createObjectProperty( "http://data.doremus.org/ontology#U221i_is_title_proper_of_series_of" );
 
-    public static final ObjectProperty U222_has_title_proper_of_sub_series = m_model.createObjectProperty( "http://data.doremus.org/org.doremus.ontology#U222_has_title_proper_of_sub-series" );
+    public static final ObjectProperty U222_has_title_proper_of_sub_series = m_model.createObjectProperty( "http://data.doremus.org/ontology#U222_has_title_proper_of_sub-series" );
 
-    public static final ObjectProperty U222i_is_title_proper_of_sub_series_of = m_model.createObjectProperty( "http://data.doremus.org/org.doremus.ontology#U222i_is_title_proper_of_sub-series_of" );
+    public static final ObjectProperty U222i_is_title_proper_of_sub_series_of = m_model.createObjectProperty( "http://data.doremus.org/ontology#U222i_is_title_proper_of_sub-series_of" );
 
-    public static final ObjectProperty U223_has_number_of_tape_tracks = m_model.createObjectProperty( "http://data.doremus.org/org.doremus.ontology#U223_has_number_of_tape_tracks" );
+    public static final ObjectProperty U223_has_number_of_tape_tracks = m_model.createObjectProperty( "http://data.doremus.org/ontology#U223_has_number_of_tape_tracks" );
 
-    public static final ObjectProperty U223i_is_number_of_tape_tracks_of = m_model.createObjectProperty( "http://data.doremus.org/org.doremus.ontology#U223i_is_number_of_tape_tracks_of" );
+    public static final ObjectProperty U223i_is_number_of_tape_tracks_of = m_model.createObjectProperty( "http://data.doremus.org/ontology#U223i_is_number_of_tape_tracks_of" );
 
-    public static final ObjectProperty U224_has_title_proper_of_multipart_monograph = m_model.createObjectProperty( "http://data.doremus.org/org.doremus.ontology#U224_has_title_proper_of_multipart_monograph" );
+    public static final ObjectProperty U224_has_title_proper_of_multipart_monograph = m_model.createObjectProperty( "http://data.doremus.org/ontology#U224_has_title_proper_of_multipart_monograph" );
 
-    public static final ObjectProperty U224i_is_title_proper_of_multipart_monograph_of = m_model.createObjectProperty( "http://data.doremus.org/org.doremus.ontology#U224i_is_title_proper_of_multipart_monograph_of" );
+    public static final ObjectProperty U224i_is_title_proper_of_multipart_monograph_of = m_model.createObjectProperty( "http://data.doremus.org/ontology#U224i_is_title_proper_of_multipart_monograph_of" );
 
-    public static final ObjectProperty U225_used_sound_spatialization_technique = m_model.createObjectProperty( "http://data.doremus.org/org.doremus.ontology#U225_used_sound_spatialization_technique" );
+    public static final ObjectProperty U225_used_sound_spatialization_technique = m_model.createObjectProperty( "http://data.doremus.org/ontology#U225_used_sound_spatialization_technique" );
 
-    public static final ObjectProperty U225i_was_sound_spatialization_technique_of = m_model.createObjectProperty( "http://data.doremus.org/org.doremus.ontology#U225i_was_sound_spatialization_technique_of" );
+    public static final ObjectProperty U225i_was_sound_spatialization_technique_of = m_model.createObjectProperty( "http://data.doremus.org/ontology#U225i_was_sound_spatialization_technique_of" );
 
-    public static final ObjectProperty U227_has_content_type = m_model.createObjectProperty( "http://data.doremus.org/org.doremus.ontology#U227_has_content_type" );
+    public static final ObjectProperty U227_has_content_type = m_model.createObjectProperty( "http://data.doremus.org/ontology#U227_has_content_type" );
 
-    public static final ObjectProperty U227i_is_content_type_of = m_model.createObjectProperty( "http://data.doremus.org/org.doremus.ontology#U227i_is_content_type_of" );
+    public static final ObjectProperty U227i_is_content_type_of = m_model.createObjectProperty( "http://data.doremus.org/ontology#U227i_is_content_type_of" );
 
-    public static final ObjectProperty U229_has_music_format = m_model.createObjectProperty( "http://data.doremus.org/org.doremus.ontology#U229_has_music_format" );
+    public static final ObjectProperty U229_has_music_format = m_model.createObjectProperty( "http://data.doremus.org/ontology#U229_has_music_format" );
 
-    public static final ObjectProperty U229i_is_music_format_of = m_model.createObjectProperty( "http://data.doremus.org/org.doremus.ontology#U229i_is_music_format_of" );
+    public static final ObjectProperty U229i_is_music_format_of = m_model.createObjectProperty( "http://data.doremus.org/ontology#U229i_is_music_format_of" );
 
-    public static final ObjectProperty U22_is_about_place = m_model.createObjectProperty( "http://data.doremus.org/org.doremus.ontology#U22_is_about_place" );
+    public static final ObjectProperty U22_is_about_place = m_model.createObjectProperty( "http://data.doremus.org/ontology#U22_is_about_place" );
 
-    public static final ObjectProperty U22i_place_is_subject_of = m_model.createObjectProperty( "http://data.doremus.org/org.doremus.ontology#U22i_place_is_subject_of" );
+    public static final ObjectProperty U22i_place_is_subject_of = m_model.createObjectProperty( "http://data.doremus.org/ontology#U22i_place_is_subject_of" );
 
-    public static final ObjectProperty U23_has_casting_detail = m_model.createObjectProperty( "http://data.doremus.org/org.doremus.ontology#U23_has_casting_detail" );
+    public static final ObjectProperty U23_has_casting_detail = m_model.createObjectProperty( "http://data.doremus.org/ontology#U23_has_casting_detail" );
 
-    public static final ObjectProperty U23i_is_casting_detail_of = m_model.createObjectProperty( "http://data.doremus.org/org.doremus.ontology#U23i_is_casting_detail_of" );
+    public static final ObjectProperty U23i_is_casting_detail_of = m_model.createObjectProperty( "http://data.doremus.org/ontology#U23i_is_casting_detail_of" );
 
-    public static final ObjectProperty U24_has_award = m_model.createObjectProperty( "http://data.doremus.org/org.doremus.ontology#U24_has_award" );
+    public static final ObjectProperty U24_has_award = m_model.createObjectProperty( "http://data.doremus.org/ontology#U24_has_award" );
 
-    public static final ObjectProperty U24i_is_award_of = m_model.createObjectProperty( "http://data.doremus.org/org.doremus.ontology#U24i_is_award_of" );
+    public static final ObjectProperty U24i_is_award_of = m_model.createObjectProperty( "http://data.doremus.org/ontology#U24i_is_award_of" );
 
-    public static final ObjectProperty U25_has_scale = m_model.createObjectProperty( "http://data.doremus.org/org.doremus.ontology#U25_has_scale" );
+    public static final ObjectProperty U25_has_scale = m_model.createObjectProperty( "http://data.doremus.org/ontology#U25_has_scale" );
 
-    public static final ObjectProperty U25i_is_scale_of = m_model.createObjectProperty( "http://data.doremus.org/org.doremus.ontology#U25i_is_scale_of" );
+    public static final ObjectProperty U25i_is_scale_of = m_model.createObjectProperty( "http://data.doremus.org/ontology#U25i_is_scale_of" );
 
-    public static final ObjectProperty U26_has_maintained = m_model.createObjectProperty( "http://data.doremus.org/org.doremus.ontology#U26_has_maintained" );
+    public static final ObjectProperty U26_has_maintained = m_model.createObjectProperty( "http://data.doremus.org/ontology#U26_has_maintained" );
 
-    public static final ObjectProperty U26i_was_maintained_by = m_model.createObjectProperty( "http://data.doremus.org/org.doremus.ontology#U26i_was_maintained_by" );
+    public static final ObjectProperty U26i_was_maintained_by = m_model.createObjectProperty( "http://data.doremus.org/ontology#U26i_was_maintained_by" );
 
-    public static final ObjectProperty U27_performed_character = m_model.createObjectProperty( "http://data.doremus.org/org.doremus.ontology#U27_performed_character" );
+    public static final ObjectProperty U27_performed_character = m_model.createObjectProperty( "http://data.doremus.org/ontology#U27_performed_character" );
 
-    public static final ObjectProperty U27i_character_was_performed_by = m_model.createObjectProperty( "http://data.doremus.org/org.doremus.ontology#U27i_character_was_performed_by" );
+    public static final ObjectProperty U27i_character_was_performed_by = m_model.createObjectProperty( "http://data.doremus.org/ontology#U27i_character_was_performed_by" );
 
-    public static final ObjectProperty U28_has_ambitus = m_model.createObjectProperty( "http://data.doremus.org/org.doremus.ontology#U28_has_ambitus" );
+    public static final ObjectProperty U28_has_ambitus = m_model.createObjectProperty( "http://data.doremus.org/ontology#U28_has_ambitus" );
 
-    public static final ObjectProperty U28i_is_ambitus_of = m_model.createObjectProperty( "http://data.doremus.org/org.doremus.ontology#U28i_is_ambitus_of" );
+    public static final ObjectProperty U28i_is_ambitus_of = m_model.createObjectProperty( "http://data.doremus.org/ontology#U28i_is_ambitus_of" );
 
-    public static final ObjectProperty U29_edited = m_model.createObjectProperty( "http://data.doremus.org/org.doremus.ontology#U29_edited" );
+    public static final ObjectProperty U29_edited = m_model.createObjectProperty( "http://data.doremus.org/ontology#U29_edited" );
 
-    public static final ObjectProperty U29i_was_edited_by = m_model.createObjectProperty( "http://data.doremus.org/org.doremus.ontology#U29i_was_edited_by" );
+    public static final ObjectProperty U29i_was_edited_by = m_model.createObjectProperty( "http://data.doremus.org/ontology#U29i_was_edited_by" );
 
-    public static final ObjectProperty U2_foresees_use_of_medium_of_performance = m_model.createObjectProperty( "http://data.doremus.org/org.doremus.ontology#U2_foresees_use_of_medium_of_performance" );
+    public static final ObjectProperty U2_foresees_use_of_medium_of_performance = m_model.createObjectProperty( "http://data.doremus.org/ontology#U2_foresees_use_of_medium_of_performance" );
 
-    public static final ObjectProperty U2i_is_foreseen_type_of_medium_of_performance_in = m_model.createObjectProperty( "http://data.doremus.org/org.doremus.ontology#U2i_is_foreseen_type_of_medium_of_performance_in" );
+    public static final ObjectProperty U2i_is_foreseen_type_of_medium_of_performance_in = m_model.createObjectProperty( "http://data.doremus.org/ontology#U2i_is_foreseen_type_of_medium_of_performance_in" );
 
-    public static final ObjectProperty U31_had_function = m_model.createObjectProperty( "http://data.doremus.org/org.doremus.ontology#U31_had_function" );
+    public static final ObjectProperty U31_had_function = m_model.createObjectProperty( "http://data.doremus.org/ontology#U31_had_function" );
 
-    public static final ObjectProperty U31i_was_function_of = m_model.createObjectProperty( "http://data.doremus.org/org.doremus.ontology#U31i_was_function_of" );
+    public static final ObjectProperty U31i_was_function_of = m_model.createObjectProperty( "http://data.doremus.org/ontology#U31i_was_function_of" );
 
-    public static final ObjectProperty U32_had_responsibility = m_model.createObjectProperty( "http://data.doremus.org/org.doremus.ontology#U32_had_responsibility" );
+    public static final ObjectProperty U32_had_responsibility = m_model.createObjectProperty( "http://data.doremus.org/ontology#U32_had_responsibility" );
 
-    public static final ObjectProperty U32i_was_responsibility_of = m_model.createObjectProperty( "http://data.doremus.org/org.doremus.ontology#U32i_was_responsibility_of" );
+    public static final ObjectProperty U32i_was_responsibility_of = m_model.createObjectProperty( "http://data.doremus.org/ontology#U32i_was_responsibility_of" );
 
-    public static final ObjectProperty U33_has_set_of_characters = m_model.createObjectProperty( "http://data.doremus.org/org.doremus.ontology#U33_has_set_of_characters" );
+    public static final ObjectProperty U33_has_set_of_characters = m_model.createObjectProperty( "http://data.doremus.org/ontology#U33_has_set_of_characters" );
 
-    public static final ObjectProperty U33i_is_set_of_characters_of = m_model.createObjectProperty( "http://data.doremus.org/org.doremus.ontology#U33i_is_set_of_characters_of" );
+    public static final ObjectProperty U33i_is_set_of_characters_of = m_model.createObjectProperty( "http://data.doremus.org/ontology#U33i_is_set_of_characters_of" );
 
-    public static final ObjectProperty U34_foresees_character = m_model.createObjectProperty( "http://data.doremus.org/org.doremus.ontology#U34_foresees_character" );
+    public static final ObjectProperty U34_foresees_character = m_model.createObjectProperty( "http://data.doremus.org/ontology#U34_foresees_character" );
 
-    public static final ObjectProperty U34i_is_foreseen_character_of = m_model.createObjectProperty( "http://data.doremus.org/org.doremus.ontology#U34i_is_foreseen_character_of" );
+    public static final ObjectProperty U34i_is_foreseen_character_of = m_model.createObjectProperty( "http://data.doremus.org/ontology#U34i_is_foreseen_character_of" );
 
-    public static final ObjectProperty U35_foresees_function = m_model.createObjectProperty( "http://data.doremus.org/org.doremus.ontology#U35_foresees_function" );
+    public static final ObjectProperty U35_foresees_function = m_model.createObjectProperty( "http://data.doremus.org/ontology#U35_foresees_function" );
 
-    public static final ObjectProperty U35i_is_foreseen_function_of = m_model.createObjectProperty( "http://data.doremus.org/org.doremus.ontology#U35i_is_foreseen_function_of" );
+    public static final ObjectProperty U35i_is_foreseen_function_of = m_model.createObjectProperty( "http://data.doremus.org/ontology#U35i_is_foreseen_function_of" );
 
-    public static final ObjectProperty U36_foresees_responsibility = m_model.createObjectProperty( "http://data.doremus.org/org.doremus.ontology#U36_foresees_responsibility" );
+    public static final ObjectProperty U36_foresees_responsibility = m_model.createObjectProperty( "http://data.doremus.org/ontology#U36_foresees_responsibility" );
 
-    public static final ObjectProperty U36i_is_foreseen_responsibility_of = m_model.createObjectProperty( "http://data.doremus.org/org.doremus.ontology#U36i_is_foreseen_responsibility_of" );
+    public static final ObjectProperty U36i_is_foreseen_responsibility_of = m_model.createObjectProperty( "http://data.doremus.org/ontology#U36i_is_foreseen_responsibility_of" );
 
-    public static final ObjectProperty U37_foresees_performing_character = m_model.createObjectProperty( "http://data.doremus.org/org.doremus.ontology#U37_foresees_performing_character" );
+    public static final ObjectProperty U37_foresees_performing_character = m_model.createObjectProperty( "http://data.doremus.org/ontology#U37_foresees_performing_character" );
 
-    public static final ObjectProperty U37i_is_foreseen_character_in = m_model.createObjectProperty( "http://data.doremus.org/org.doremus.ontology#U37i_is_foreseen_character_in" );
+    public static final ObjectProperty U37i_is_foreseen_character_in = m_model.createObjectProperty( "http://data.doremus.org/ontology#U37i_is_foreseen_character_in" );
 
-    public static final ObjectProperty U38_has_descriptive_expression = m_model.createObjectProperty( "http://data.doremus.org/org.doremus.ontology#U38_has_descriptive_expression" );
+    public static final ObjectProperty U38_has_descriptive_expression = m_model.createObjectProperty( "http://data.doremus.org/ontology#U38_has_descriptive_expression" );
 
-    public static final ObjectProperty U38i_is_descriptive_expression_of = m_model.createObjectProperty( "http://data.doremus.org/org.doremus.ontology#U38i_is_descriptive_expression_of" );
+    public static final ObjectProperty U38i_is_descriptive_expression_of = m_model.createObjectProperty( "http://data.doremus.org/ontology#U38i_is_descriptive_expression_of" );
 
-    public static final ObjectProperty U39_has_tuned = m_model.createObjectProperty( "http://data.doremus.org/org.doremus.ontology#U39_has_tuned" );
+    public static final ObjectProperty U39_has_tuned = m_model.createObjectProperty( "http://data.doremus.org/ontology#U39_has_tuned" );
 
-    public static final ObjectProperty U39i_was_tuned_by = m_model.createObjectProperty( "http://data.doremus.org/org.doremus.ontology#U39i_was_tuned_by" );
+    public static final ObjectProperty U39i_was_tuned_by = m_model.createObjectProperty( "http://data.doremus.org/ontology#U39i_was_tuned_by" );
 
-    public static final ObjectProperty U3_foresees_use_of_specific_object = m_model.createObjectProperty( "http://data.doremus.org/org.doremus.ontology#U3_foresees_use_of_specific_object" );
+    public static final ObjectProperty U3_foresees_use_of_specific_object = m_model.createObjectProperty( "http://data.doremus.org/ontology#U3_foresees_use_of_specific_object" );
 
-    public static final ObjectProperty U3i_is_foreseen_specific_object_in = m_model.createObjectProperty( "http://data.doremus.org/org.doremus.ontology#U3i_is_foreseen_specific_object_in" );
+    public static final ObjectProperty U3i_is_foreseen_specific_object_in = m_model.createObjectProperty( "http://data.doremus.org/ontology#U3i_is_foreseen_specific_object_in" );
 
-    public static final ObjectProperty U40_has_catalogue_name = m_model.createObjectProperty( "http://data.doremus.org/org.doremus.ontology#U40_has_catalogue_name" );
+    public static final ObjectProperty U40_has_catalogue_name = m_model.createObjectProperty( "http://data.doremus.org/ontology#U40_has_catalogue_name" );
 
-    public static final ObjectProperty U40i_is_catalogue_name_of = m_model.createObjectProperty( "http://data.doremus.org/org.doremus.ontology#U40i_is_catalogue_name_of" );
+    public static final ObjectProperty U40i_is_catalogue_name_of = m_model.createObjectProperty( "http://data.doremus.org/ontology#U40i_is_catalogue_name_of" );
 
-    public static final ObjectProperty U44_has_dedication_statement = m_model.createObjectProperty( "http://data.doremus.org/org.doremus.ontology#U44_has_dedication_statement" );
+    public static final ObjectProperty U44_has_dedication_statement = m_model.createObjectProperty( "http://data.doremus.org/ontology#U44_has_dedication_statement" );
 
-    public static final ObjectProperty U44i_is_dedication_statement_of = m_model.createObjectProperty( "http://data.doremus.org/org.doremus.ontology#U44i_is_dedication_statement_of" );
+    public static final ObjectProperty U44i_is_dedication_statement_of = m_model.createObjectProperty( "http://data.doremus.org/ontology#U44i_is_dedication_statement_of" );
 
-    public static final ObjectProperty U45_has_metronome_indication = m_model.createObjectProperty( "http://data.doremus.org/org.doremus.ontology#U45_has_metronome_indication" );
+    public static final ObjectProperty U45_has_metronome_indication = m_model.createObjectProperty( "http://data.doremus.org/ontology#U45_has_metronome_indication" );
 
-    public static final ObjectProperty U45i_is_metronome_indication_of = m_model.createObjectProperty( "http://data.doremus.org/org.doremus.ontology#U45i_is_metronome_indication_of" );
+    public static final ObjectProperty U45i_is_metronome_indication_of = m_model.createObjectProperty( "http://data.doremus.org/ontology#U45i_is_metronome_indication_of" );
 
-    public static final ObjectProperty U46_occurred_in_context = m_model.createObjectProperty( "http://data.doremus.org/org.doremus.ontology#U46_occurred_in_context" );
+    public static final ObjectProperty U46_occurred_in_context = m_model.createObjectProperty( "http://data.doremus.org/ontology#U46_occurred_in_context" );
 
-    public static final ObjectProperty U46i_was_context_of = m_model.createObjectProperty( "http://data.doremus.org/org.doremus.ontology#U46i_was_context_of" );
+    public static final ObjectProperty U46i_was_context_of = m_model.createObjectProperty( "http://data.doremus.org/ontology#U46i_was_context_of" );
 
-    public static final ObjectProperty U47_has_derivation_type = m_model.createObjectProperty( "http://data.doremus.org/org.doremus.ontology#U47_has_derivation_type" );
+    public static final ObjectProperty U47_has_derivation_type = m_model.createObjectProperty( "http://data.doremus.org/ontology#U47_has_derivation_type" );
 
-    public static final ObjectProperty U47i_is_derivation_type_of = m_model.createObjectProperty( "http://data.doremus.org/org.doremus.ontology#U47i_is_derivation_type_of" );
+    public static final ObjectProperty U47i_is_derivation_type_of = m_model.createObjectProperty( "http://data.doremus.org/ontology#U47i_is_derivation_type_of" );
 
-    public static final ObjectProperty U49_created_for_actor = m_model.createObjectProperty( "http://data.doremus.org/org.doremus.ontology#U49_created_for_actor" );
+    public static final ObjectProperty U49_created_for_actor = m_model.createObjectProperty( "http://data.doremus.org/ontology#U49_created_for_actor" );
 
-    public static final ObjectProperty U49i_actor_motivated = m_model.createObjectProperty( "http://data.doremus.org/org.doremus.ontology#U49i_actor_motivated" );
+    public static final ObjectProperty U49i_actor_motivated = m_model.createObjectProperty( "http://data.doremus.org/ontology#U49i_actor_motivated" );
 
-    public static final ObjectProperty U4_had_princeps_publication = m_model.createObjectProperty( "http://data.doremus.org/org.doremus.ontology#U4_had_princeps_publication" );
+    public static final ObjectProperty U4_had_princeps_publication = m_model.createObjectProperty( "http://data.doremus.org/ontology#U4_had_princeps_publication" );
 
-    public static final ObjectProperty U4i_was_princeps_publication_of = m_model.createObjectProperty( "http://data.doremus.org/org.doremus.ontology#U4i_was_princeps_publication_of" );
+    public static final ObjectProperty U4i_was_princeps_publication_of = m_model.createObjectProperty( "http://data.doremus.org/ontology#U4i_was_princeps_publication_of" );
 
-    public static final ObjectProperty U51_is_partial_or_full_recording_of = m_model.createObjectProperty( "http://data.doremus.org/org.doremus.ontology#U51_is_partial_or_full_recording_of" );
+    public static final ObjectProperty U51_is_partial_or_full_recording_of = m_model.createObjectProperty( "http://data.doremus.org/ontology#U51_is_partial_or_full_recording_of" );
 
-    public static final ObjectProperty U51i_has_partial_or_full_recording = m_model.createObjectProperty( "http://data.doremus.org/org.doremus.ontology#U51i_has_partial_or_full_recording" );
+    public static final ObjectProperty U51i_has_partial_or_full_recording = m_model.createObjectProperty( "http://data.doremus.org/ontology#U51i_has_partial_or_full_recording" );
 
-    public static final ObjectProperty U52_has_context = m_model.createObjectProperty( "http://data.doremus.org/org.doremus.ontology#U52_has_context" );
+    public static final ObjectProperty U52_has_context = m_model.createObjectProperty( "http://data.doremus.org/ontology#U52_has_context" );
 
-    public static final ObjectProperty U52i_is_context_of = m_model.createObjectProperty( "http://data.doremus.org/org.doremus.ontology#U52i_is_context_of" );
+    public static final ObjectProperty U52i_is_context_of = m_model.createObjectProperty( "http://data.doremus.org/ontology#U52i_is_context_of" );
 
-    public static final ObjectProperty U53_has_duration = m_model.createObjectProperty( "http://data.doremus.org/org.doremus.ontology#U53_has_duration" );
+    public static final ObjectProperty U53_has_duration = m_model.createObjectProperty( "http://data.doremus.org/ontology#U53_has_duration" );
 
-    public static final ObjectProperty U53i_is_duration_of = m_model.createObjectProperty( "http://data.doremus.org/org.doremus.ontology#U53i_is_duration_of" );
+    public static final ObjectProperty U53i_is_duration_of = m_model.createObjectProperty( "http://data.doremus.org/ontology#U53i_is_duration_of" );
 
-    public static final ObjectProperty U54_is_performed_expression_of = m_model.createObjectProperty( "http://data.doremus.org/org.doremus.ontology#U54_is_performed_expression_of" );
+    public static final ObjectProperty U54_is_performed_expression_of = m_model.createObjectProperty( "http://data.doremus.org/ontology#U54_is_performed_expression_of" );
 
-    public static final ObjectProperty U54i_has_performed_expression = m_model.createObjectProperty( "http://data.doremus.org/org.doremus.ontology#U54i_has_performed_expression" );
+    public static final ObjectProperty U54i_has_performed_expression = m_model.createObjectProperty( "http://data.doremus.org/ontology#U54i_has_performed_expression" );
 
-    public static final ObjectProperty U55_incorporates_performed_expression = m_model.createObjectProperty( "http://data.doremus.org/org.doremus.ontology#U55_incorporates_performed_expression" );
+    public static final ObjectProperty U55_incorporates_performed_expression = m_model.createObjectProperty( "http://data.doremus.org/ontology#U55_incorporates_performed_expression" );
 
-    public static final ObjectProperty U55i_performed_expression_is_incorporated_in = m_model.createObjectProperty( "http://data.doremus.org/org.doremus.ontology#U55i_performed_expression_is_incorporated_in" );
+    public static final ObjectProperty U55i_performed_expression_is_incorporated_in = m_model.createObjectProperty( "http://data.doremus.org/ontology#U55i_performed_expression_is_incorporated_in" );
 
-    public static final ObjectProperty U56_occurred_in_historical_context = m_model.createObjectProperty( "http://data.doremus.org/org.doremus.ontology#U56_occurred_in_historical_context" );
+    public static final ObjectProperty U56_occurred_in_historical_context = m_model.createObjectProperty( "http://data.doremus.org/ontology#U56_occurred_in_historical_context" );
 
-    public static final ObjectProperty U56i_was_historical_context_of = m_model.createObjectProperty( "http://data.doremus.org/org.doremus.ontology#U56i_was_historical_context_of" );
+    public static final ObjectProperty U56i_was_historical_context_of = m_model.createObjectProperty( "http://data.doremus.org/ontology#U56i_was_historical_context_of" );
 
-    public static final ObjectProperty U57_occurred_in_religious_context = m_model.createObjectProperty( "http://data.doremus.org/org.doremus.ontology#U57_occurred_in_religious_context" );
+    public static final ObjectProperty U57_occurred_in_religious_context = m_model.createObjectProperty( "http://data.doremus.org/ontology#U57_occurred_in_religious_context" );
 
-    public static final ObjectProperty U57i_was_religious_context_of = m_model.createObjectProperty( "http://data.doremus.org/org.doremus.ontology#U57i_was_religious_context_of" );
+    public static final ObjectProperty U57i_was_religious_context_of = m_model.createObjectProperty( "http://data.doremus.org/ontology#U57i_was_religious_context_of" );
 
-    public static final ObjectProperty U58_has_full_published_recording = m_model.createObjectProperty( "http://data.doremus.org/org.doremus.ontology#U58_has_full_published_recording" );
+    public static final ObjectProperty U58_has_full_published_recording = m_model.createObjectProperty( "http://data.doremus.org/ontology#U58_has_full_published_recording" );
 
-    public static final ObjectProperty U58i_is_full_published_recording_of = m_model.createObjectProperty( "http://data.doremus.org/org.doremus.ontology#U58i_is_full_published_recording_of" );
+    public static final ObjectProperty U58i_is_full_published_recording_of = m_model.createObjectProperty( "http://data.doremus.org/ontology#U58i_is_full_published_recording_of" );
 
-    public static final ObjectProperty U59_has_partial_published_recording = m_model.createObjectProperty( "http://data.doremus.org/org.doremus.ontology#U59_has_partial_published_recording" );
+    public static final ObjectProperty U59_has_partial_published_recording = m_model.createObjectProperty( "http://data.doremus.org/ontology#U59_has_partial_published_recording" );
 
-    public static final ObjectProperty U59i_is_partial_published_recording_of = m_model.createObjectProperty( "http://data.doremus.org/org.doremus.ontology#U59i_is_partial_published_recording_of" );
+    public static final ObjectProperty U59i_is_partial_published_recording_of = m_model.createObjectProperty( "http://data.doremus.org/ontology#U59i_is_partial_published_recording_of" );
 
-    public static final ObjectProperty U5_had_premiere = m_model.createObjectProperty( "http://data.doremus.org/org.doremus.ontology#U5_had_premiere" );
+    public static final ObjectProperty U5_had_premiere = m_model.createObjectProperty( "http://data.doremus.org/ontology#U5_had_premiere" );
 
-    public static final ObjectProperty U5i_was_premiere_of = m_model.createObjectProperty( "http://data.doremus.org/org.doremus.ontology#U5i_was_premiere_of" );
+    public static final ObjectProperty U5i_was_premiere_of = m_model.createObjectProperty( "http://data.doremus.org/ontology#U5i_was_premiere_of" );
 
-    public static final ObjectProperty U60_occurred_in_cultural_context = m_model.createObjectProperty( "http://data.doremus.org/org.doremus.ontology#U60_occurred_in_cultural_context" );
+    public static final ObjectProperty U60_occurred_in_cultural_context = m_model.createObjectProperty( "http://data.doremus.org/ontology#U60_occurred_in_cultural_context" );
 
-    public static final ObjectProperty U60i_was_cultural_context_of = m_model.createObjectProperty( "http://data.doremus.org/org.doremus.ontology#U60i_was_cultural_context_of" );
+    public static final ObjectProperty U60i_was_cultural_context_of = m_model.createObjectProperty( "http://data.doremus.org/ontology#U60i_was_cultural_context_of" );
 
-    public static final ObjectProperty U61_occurred_in_geographical_context = m_model.createObjectProperty( "http://data.doremus.org/org.doremus.ontology#U61_occurred_in_geographical_context" );
+    public static final ObjectProperty U61_occurred_in_geographical_context = m_model.createObjectProperty( "http://data.doremus.org/ontology#U61_occurred_in_geographical_context" );
 
-    public static final ObjectProperty U61i_was_geographical_context_of = m_model.createObjectProperty( "http://data.doremus.org/org.doremus.ontology#U61i_was_geographical_context_of" );
+    public static final ObjectProperty U61i_was_geographical_context_of = m_model.createObjectProperty( "http://data.doremus.org/ontology#U61i_was_geographical_context_of" );
 
-    public static final ObjectProperty U62_has_form = m_model.createObjectProperty( "http://data.doremus.org/org.doremus.ontology#U62_has_form" );
+    public static final ObjectProperty U62_has_form = m_model.createObjectProperty( "http://data.doremus.org/ontology#U62_has_form" );
 
-    public static final ObjectProperty U62i_is_form_of = m_model.createObjectProperty( "http://data.doremus.org/org.doremus.ontology#U62i_is_form_of" );
+    public static final ObjectProperty U62i_is_form_of = m_model.createObjectProperty( "http://data.doremus.org/ontology#U62i_is_form_of" );
 
-    public static final ObjectProperty U63_has_religious_context = m_model.createObjectProperty( "http://data.doremus.org/org.doremus.ontology#U63_has_religious_context" );
+    public static final ObjectProperty U63_has_religious_context = m_model.createObjectProperty( "http://data.doremus.org/ontology#U63_has_religious_context" );
 
-    public static final ObjectProperty U63i_is_religious_context_of = m_model.createObjectProperty( "http://data.doremus.org/org.doremus.ontology#U63i_is_religious_context_of" );
+    public static final ObjectProperty U63i_is_religious_context_of = m_model.createObjectProperty( "http://data.doremus.org/ontology#U63i_is_religious_context_of" );
 
-    public static final ObjectProperty U64_has_cultural_context = m_model.createObjectProperty( "http://data.doremus.org/org.doremus.ontology#U64_has_cultural_context" );
+    public static final ObjectProperty U64_has_cultural_context = m_model.createObjectProperty( "http://data.doremus.org/ontology#U64_has_cultural_context" );
 
-    public static final ObjectProperty U64i_is_cultural_context_of = m_model.createObjectProperty( "http://data.doremus.org/org.doremus.ontology#U64i_is_cultural_context_of" );
+    public static final ObjectProperty U64i_is_cultural_context_of = m_model.createObjectProperty( "http://data.doremus.org/ontology#U64i_is_cultural_context_of" );
 
-    public static final ObjectProperty U65_has_geographical_context = m_model.createObjectProperty( "http://data.doremus.org/org.doremus.ontology#U65_has_geographical_context" );
+    public static final ObjectProperty U65_has_geographical_context = m_model.createObjectProperty( "http://data.doremus.org/ontology#U65_has_geographical_context" );
 
-    public static final ObjectProperty U65i_is_geographical_context_of = m_model.createObjectProperty( "http://data.doremus.org/org.doremus.ontology#U65i_is_geographical_context_of" );
+    public static final ObjectProperty U65i_is_geographical_context_of = m_model.createObjectProperty( "http://data.doremus.org/ontology#U65i_is_geographical_context_of" );
 
-    public static final ObjectProperty U66_has_historical_context = m_model.createObjectProperty( "http://data.doremus.org/org.doremus.ontology#U66_has_historical_context" );
+    public static final ObjectProperty U66_has_historical_context = m_model.createObjectProperty( "http://data.doremus.org/ontology#U66_has_historical_context" );
 
-    public static final ObjectProperty U66i_is_historical_context_of = m_model.createObjectProperty( "http://data.doremus.org/org.doremus.ontology#U66i_is_historical_context_of" );
+    public static final ObjectProperty U66i_is_historical_context_of = m_model.createObjectProperty( "http://data.doremus.org/ontology#U66i_is_historical_context_of" );
 
-    public static final ObjectProperty U6_foresees_actor = m_model.createObjectProperty( "http://data.doremus.org/org.doremus.ontology#U6_foresees_actor" );
+    public static final ObjectProperty U6_foresees_actor = m_model.createObjectProperty( "http://data.doremus.org/ontology#U6_foresees_actor" );
 
-    public static final ObjectProperty U6i_is_foreseen_actor_of = m_model.createObjectProperty( "http://data.doremus.org/org.doremus.ontology#U6i_is_foreseen_actor_of" );
+    public static final ObjectProperty U6i_is_foreseen_actor_of = m_model.createObjectProperty( "http://data.doremus.org/ontology#U6i_is_foreseen_actor_of" );
 
-    public static final ObjectProperty U73_is_derivative_of = m_model.createObjectProperty( "http://data.doremus.org/org.doremus.ontology#U73_is_derivative_of" );
+    public static final ObjectProperty U73_is_derivative_of = m_model.createObjectProperty( "http://data.doremus.org/ontology#U73_is_derivative_of" );
 
-    public static final ObjectProperty U73i_has_derivative = m_model.createObjectProperty( "http://data.doremus.org/org.doremus.ontology#U73i_has_derivative" );
+    public static final ObjectProperty U73i_has_derivative = m_model.createObjectProperty( "http://data.doremus.org/ontology#U73i_has_derivative" );
 
-    public static final ObjectProperty U74_cited = m_model.createObjectProperty( "http://data.doremus.org/org.doremus.ontology#U74_cited" );
+    public static final ObjectProperty U74_cited = m_model.createObjectProperty( "http://data.doremus.org/ontology#U74_cited" );
 
-    public static final ObjectProperty U74i_was_cited_by = m_model.createObjectProperty( "http://data.doremus.org/org.doremus.ontology#U74i_was_cited_by" );
+    public static final ObjectProperty U74i_was_cited_by = m_model.createObjectProperty( "http://data.doremus.org/ontology#U74i_was_cited_by" );
 
-    public static final ObjectProperty U75_has_harmonic_structure = m_model.createObjectProperty( "http://data.doremus.org/org.doremus.ontology#U75_has_harmonic_structure" );
+    public static final ObjectProperty U75_has_harmonic_structure = m_model.createObjectProperty( "http://data.doremus.org/ontology#U75_has_harmonic_structure" );
 
-    public static final ObjectProperty U75i_is_harmonic_structure_of = m_model.createObjectProperty( "http://data.doremus.org/org.doremus.ontology#U75i_is_harmonic_structure_of" );
+    public static final ObjectProperty U75i_is_harmonic_structure_of = m_model.createObjectProperty( "http://data.doremus.org/ontology#U75i_is_harmonic_structure_of" );
 
-    public static final ObjectProperty U77_foresees_performing_plan = m_model.createObjectProperty( "http://data.doremus.org/org.doremus.ontology#U77_foresees_performing_plan" );
+    public static final ObjectProperty U77_foresees_performing_plan = m_model.createObjectProperty( "http://data.doremus.org/ontology#U77_foresees_performing_plan" );
 
-    public static final ObjectProperty U77i_is_foreseen_plan_in = m_model.createObjectProperty( "http://data.doremus.org/org.doremus.ontology#U77i_is_foreseen_plan_in" );
+    public static final ObjectProperty U77i_is_foreseen_plan_in = m_model.createObjectProperty( "http://data.doremus.org/ontology#U77i_is_foreseen_plan_in" );
 
-    public static final ObjectProperty U7_foresees_place_at = m_model.createObjectProperty( "http://data.doremus.org/org.doremus.ontology#U7_foresees_place_at" );
+    public static final ObjectProperty U7_foresees_place_at = m_model.createObjectProperty( "http://data.doremus.org/ontology#U7_foresees_place_at" );
 
-    public static final ObjectProperty U7i_is_foreseen_place_of = m_model.createObjectProperty( "http://data.doremus.org/org.doremus.ontology#U7i_is_foreseen_place_of" );
+    public static final ObjectProperty U7i_is_foreseen_place_of = m_model.createObjectProperty( "http://data.doremus.org/ontology#U7i_is_foreseen_place_of" );
 
-    public static final ObjectProperty U81_had_performer_status = m_model.createObjectProperty( "http://data.doremus.org/org.doremus.ontology#U81_had_performer_status" );
+    public static final ObjectProperty U81_had_performer_status = m_model.createObjectProperty( "http://data.doremus.org/ontology#U81_had_performer_status" );
 
-    public static final ObjectProperty U81i_is_performer_status_of = m_model.createObjectProperty( "http://data.doremus.org/org.doremus.ontology#U81i_is_performer_status_of" );
+    public static final ObjectProperty U81i_is_performer_status_of = m_model.createObjectProperty( "http://data.doremus.org/ontology#U81i_is_performer_status_of" );
 
-    public static final ObjectProperty U82_has_foreseen_performer_status = m_model.createObjectProperty( "http://data.doremus.org/org.doremus.ontology#U82_has_foreseen_performer_status" );
+    public static final ObjectProperty U82_has_foreseen_performer_status = m_model.createObjectProperty( "http://data.doremus.org/ontology#U82_has_foreseen_performer_status" );
 
-    public static final ObjectProperty U82i_is_foreseen_performer_status_of = m_model.createObjectProperty( "http://data.doremus.org/org.doremus.ontology#U82i_is_foreseen_performer_status_of" );
+    public static final ObjectProperty U82i_is_foreseen_performer_status_of = m_model.createObjectProperty( "http://data.doremus.org/ontology#U82i_is_foreseen_performer_status_of" );
 
-    public static final ObjectProperty U83_has_relative_key = m_model.createObjectProperty( "http://data.doremus.org/org.doremus.ontology#U83_has_relative_key" );
+    public static final ObjectProperty U83_has_relative_key = m_model.createObjectProperty( "http://data.doremus.org/ontology#U83_has_relative_key" );
 
-    public static final ObjectProperty U84_has_parallel_key = m_model.createObjectProperty( "http://data.doremus.org/org.doremus.ontology#U84_has_parallel_key" );
+    public static final ObjectProperty U84_has_parallel_key = m_model.createObjectProperty( "http://data.doremus.org/ontology#U84_has_parallel_key" );
 
-    public static final ObjectProperty U85_has_closely_related_key = m_model.createObjectProperty( "http://data.doremus.org/org.doremus.ontology#U85_has_closely_related_key" );
+    public static final ObjectProperty U85_has_closely_related_key = m_model.createObjectProperty( "http://data.doremus.org/ontology#U85_has_closely_related_key" );
 
-    public static final ObjectProperty U86i_was_creation_mode_of = m_model.createObjectProperty( "http://data.doremus.org/org.doremus.ontology#U86i_was_creation_mode_of" );
+    public static final ObjectProperty U86i_was_creation_mode_of = m_model.createObjectProperty( "http://data.doremus.org/ontology#U86i_was_creation_mode_of" );
 
-    public static final ObjectProperty U87_has_member_casting_detail = m_model.createObjectProperty( "http://data.doremus.org/org.doremus.ontology#U87_has_member_casting_detail" );
+    public static final ObjectProperty U87_has_member_casting_detail = m_model.createObjectProperty( "http://data.doremus.org/ontology#U87_has_member_casting_detail" );
 
-    public static final ObjectProperty U87i_is_member_casting_detail_of = m_model.createObjectProperty( "http://data.doremus.org/org.doremus.ontology#U87i_is_member_casting_detail_of" );
+    public static final ObjectProperty U87i_is_member_casting_detail_of = m_model.createObjectProperty( "http://data.doremus.org/ontology#U87i_is_member_casting_detail_of" );
 
-    public static final ObjectProperty U88_has_medium_of_performance_section = m_model.createObjectProperty( "http://data.doremus.org/org.doremus.ontology#U88_has_medium_of_performance_section" );
+    public static final ObjectProperty U88_has_medium_of_performance_section = m_model.createObjectProperty( "http://data.doremus.org/ontology#U88_has_medium_of_performance_section" );
 
-    public static final ObjectProperty U88i_is_member_of_performance_section_of = m_model.createObjectProperty( "http://data.doremus.org/org.doremus.ontology#U88i_is_member_of_performance_section_of" );
+    public static final ObjectProperty U88i_is_member_of_performance_section_of = m_model.createObjectProperty( "http://data.doremus.org/ontology#U88i_is_member_of_performance_section_of" );
 
-    public static final ObjectProperty U89_occured_in_performance_conditions = m_model.createObjectProperty( "http://data.doremus.org/org.doremus.ontology#U89_occured_in_performance_conditions" );
+    public static final ObjectProperty U89_occured_in_performance_conditions = m_model.createObjectProperty( "http://data.doremus.org/ontology#U89_occured_in_performance_conditions" );
 
-    public static final ObjectProperty U89i_were_performance_conditions_of = m_model.createObjectProperty( "http://data.doremus.org/org.doremus.ontology#U89i_were_performance_conditions_of" );
+    public static final ObjectProperty U89i_were_performance_conditions_of = m_model.createObjectProperty( "http://data.doremus.org/ontology#U89i_were_performance_conditions_of" );
 
-    public static final ObjectProperty U8_foresees_time_span = m_model.createObjectProperty( "http://data.doremus.org/org.doremus.ontology#U8_foresees_time_span" );
+    public static final ObjectProperty U8_foresees_time_span = m_model.createObjectProperty( "http://data.doremus.org/ontology#U8_foresees_time_span" );
 
-    public static final ObjectProperty U8i_is_foreseen_time_span_of = m_model.createObjectProperty( "http://data.doremus.org/org.doremus.ontology#U8i_is_foreseen_time_span_of" );
+    public static final ObjectProperty U8i_is_foreseen_time_span_of = m_model.createObjectProperty( "http://data.doremus.org/ontology#U8i_is_foreseen_time_span_of" );
 
-    public static final ObjectProperty U90_foresees_creation_or_performance_mode = m_model.createObjectProperty( "http://data.doremus.org/org.doremus.ontology#U90_foresees_creation_or_performance_mode" );
+    public static final ObjectProperty U90_foresees_creation_or_performance_mode = m_model.createObjectProperty( "http://data.doremus.org/ontology#U90_foresees_creation_or_performance_mode" );
 
-    public static final ObjectProperty U90i_were_performance_conditions_of = m_model.createObjectProperty( "http://data.doremus.org/org.doremus.ontology#U90i_were_performance_conditions_of" );
+    public static final ObjectProperty U90i_were_performance_conditions_of = m_model.createObjectProperty( "http://data.doremus.org/ontology#U90i_were_performance_conditions_of" );
 
-    public static final ObjectProperty U91_put_into_effect = m_model.createObjectProperty( "http://data.doremus.org/org.doremus.ontology#U91_put_into_effect" );
+    public static final ObjectProperty U91_put_into_effect = m_model.createObjectProperty( "http://data.doremus.org/ontology#U91_put_into_effect" );
 
-    public static final ObjectProperty U91i_was_put_into_effect_through = m_model.createObjectProperty( "http://data.doremus.org/org.doremus.ontology#U91i_was_put_into_effect_through" );
+    public static final ObjectProperty U91i_was_put_into_effect_through = m_model.createObjectProperty( "http://data.doremus.org/ontology#U91i_was_put_into_effect_through" );
 
-    public static final ObjectProperty U92_foresees_to_put_into_effect = m_model.createObjectProperty( "http://data.doremus.org/org.doremus.ontology#U92_foresees_to_put_into_effect" );
+    public static final ObjectProperty U92_foresees_to_put_into_effect = m_model.createObjectProperty( "http://data.doremus.org/ontology#U92_foresees_to_put_into_effect" );
 
-    public static final ObjectProperty U92_is_foreseen_to_be_put_into_effect_through = m_model.createObjectProperty( "http://data.doremus.org/org.doremus.ontology#U92_is_foreseen_to_be_put_into_effect_through" );
+    public static final ObjectProperty U92_is_foreseen_to_be_put_into_effect_through = m_model.createObjectProperty( "http://data.doremus.org/ontology#U92_is_foreseen_to_be_put_into_effect_through" );
 
-    public static final ObjectProperty U93_is_realised_in = m_model.createObjectProperty( "http://data.doremus.org/org.doremus.ontology#U93_is_realised_in" );
+    public static final ObjectProperty U93_is_realised_in = m_model.createObjectProperty( "http://data.doremus.org/ontology#U93_is_realised_in" );
 
-    public static final ObjectProperty U93i_realises = m_model.createObjectProperty( "http://data.doremus.org/org.doremus.ontology#U93i_realises" );
+    public static final ObjectProperty U93i_realises = m_model.createObjectProperty( "http://data.doremus.org/ontology#U93i_realises" );
 
-    public static final ObjectProperty U94_has_work_type = m_model.createObjectProperty( "http://data.doremus.org/org.doremus.ontology#U94_has_work_type" );
+    public static final ObjectProperty U94_has_work_type = m_model.createObjectProperty( "http://data.doremus.org/ontology#U94_has_work_type" );
 
-    public static final ObjectProperty U94i_is_work_type_of = m_model.createObjectProperty( "http://data.doremus.org/org.doremus.ontology#U94i_is_work_type_of" );
+    public static final ObjectProperty U94i_is_work_type_of = m_model.createObjectProperty( "http://data.doremus.org/ontology#U94i_is_work_type_of" );
 
-    public static final ObjectProperty U95_has_hierarchical_level = m_model.createObjectProperty( "http://data.doremus.org/org.doremus.ontology#U95_has_hierarchical_level" );
+    public static final ObjectProperty U95_has_hierarchical_level = m_model.createObjectProperty( "http://data.doremus.org/ontology#U95_has_hierarchical_level" );
 
-    public static final ObjectProperty U95i_is_hierarchical_level_of = m_model.createObjectProperty( "http://data.doremus.org/org.doremus.ontology#U95i_is_hierarchical_level_of" );
+    public static final ObjectProperty U95i_is_hierarchical_level_of = m_model.createObjectProperty( "http://data.doremus.org/ontology#U95i_is_hierarchical_level_of" );
 
-    public static final ObjectProperty U96_foresees_vocal_or_instrumental_technique = m_model.createObjectProperty( "http://data.doremus.org/org.doremus.ontology#U96_foresees_vocal_or_instrumental_technique" );
+    public static final ObjectProperty U96_foresees_vocal_or_instrumental_technique = m_model.createObjectProperty( "http://data.doremus.org/ontology#U96_foresees_vocal_or_instrumental_technique" );
 
-    public static final ObjectProperty U96i_is_foreseen_vocal_or_instrumental_technique_of = m_model.createObjectProperty( "http://data.doremus.org/org.doremus.ontology#U96i_is_foreseen_vocal_or_instrumental_technique_of" );
+    public static final ObjectProperty U96i_is_foreseen_vocal_or_instrumental_technique_of = m_model.createObjectProperty( "http://data.doremus.org/ontology#U96i_is_foreseen_vocal_or_instrumental_technique_of" );
 
-    public static final DatatypeProperty U10_has_order_number = m_model.createDatatypeProperty( "http://data.doremus.org/org.doremus.ontology#U10_has_order_number" );
+    public static final DatatypeProperty U10_has_order_number = m_model.createDatatypeProperty( "http://data.doremus.org/ontology#U10_has_order_number" );
 
-    public static final DatatypeProperty U15_has_history = m_model.createDatatypeProperty( "http://data.doremus.org/org.doremus.ontology#U15_has_history" );
+    public static final DatatypeProperty U15_has_history = m_model.createDatatypeProperty( "http://data.doremus.org/ontology#U15_has_history" );
 
-    public static final DatatypeProperty U193_used_historical_instruments = m_model.createDatatypeProperty( "http://data.doremus.org/org.doremus.ontology#U193_used_historical_instruments" );
+    public static final DatatypeProperty U193_used_historical_instruments = m_model.createDatatypeProperty( "http://data.doremus.org/ontology#U193_used_historical_instruments" );
 
-    public static final DatatypeProperty U194_has_system_requirements = m_model.createDatatypeProperty( "http://data.doremus.org/org.doremus.ontology#U194_has_system_requirements" );
+    public static final DatatypeProperty U194_has_system_requirements = m_model.createDatatypeProperty( "http://data.doremus.org/ontology#U194_has_system_requirements" );
 
-    public static final DatatypeProperty U199_has_sponsor = m_model.createDatatypeProperty( "http://data.doremus.org/org.doremus.ontology#U199_has_sponsor" );
+    public static final DatatypeProperty U199_has_sponsor = m_model.createDatatypeProperty( "http://data.doremus.org/ontology#U199_has_sponsor" );
 
-    public static final DatatypeProperty U200_has_supplementary_content = m_model.createDatatypeProperty( "http://data.doremus.org/org.doremus.ontology#U200_has_supplementary_content" );
+    public static final DatatypeProperty U200_has_supplementary_content = m_model.createDatatypeProperty( "http://data.doremus.org/ontology#U200_has_supplementary_content" );
 
-    public static final DatatypeProperty U201_has_illustrative_content = m_model.createDatatypeProperty( "http://data.doremus.org/org.doremus.ontology#U201_has_illustrative_content" );
+    public static final DatatypeProperty U201_has_illustrative_content = m_model.createDatatypeProperty( "http://data.doremus.org/ontology#U201_has_illustrative_content" );
 
-    public static final DatatypeProperty U202_has_colour_details = m_model.createDatatypeProperty( "http://data.doremus.org/org.doremus.ontology#U202_has_colour_details" );
+    public static final DatatypeProperty U202_has_colour_details = m_model.createDatatypeProperty( "http://data.doremus.org/ontology#U202_has_colour_details" );
 
-    public static final DatatypeProperty U203_has_summary_or_abstract = m_model.createDatatypeProperty( "http://data.doremus.org/org.doremus.ontology#U203_has_summary_or_abstract" );
+    public static final DatatypeProperty U203_has_summary_or_abstract = m_model.createDatatypeProperty( "http://data.doremus.org/ontology#U203_has_summary_or_abstract" );
 
-    public static final DatatypeProperty U204_has_reproduction_note = m_model.createDatatypeProperty( "http://data.doremus.org/org.doremus.ontology#U204_has_reproduction_note" );
+    public static final DatatypeProperty U204_has_reproduction_note = m_model.createDatatypeProperty( "http://data.doremus.org/ontology#U204_has_reproduction_note" );
 
-    public static final DatatypeProperty U205_has_cast_detail = m_model.createDatatypeProperty( "http://data.doremus.org/org.doremus.ontology#U205_has_cast_detail" );
+    public static final DatatypeProperty U205_has_cast_detail = m_model.createDatatypeProperty( "http://data.doremus.org/ontology#U205_has_cast_detail" );
 
-    public static final DatatypeProperty U208_has_extent_of_carrier = m_model.createDatatypeProperty( "http://data.doremus.org/org.doremus.ontology#U208_has_extent_of_carrier" );
+    public static final DatatypeProperty U208_has_extent_of_carrier = m_model.createDatatypeProperty( "http://data.doremus.org/ontology#U208_has_extent_of_carrier" );
 
-    public static final DatatypeProperty U211_has_composition_of_material = m_model.createDatatypeProperty( "http://data.doremus.org/org.doremus.ontology#U211_has_composition_of_material" );
+    public static final DatatypeProperty U211_has_composition_of_material = m_model.createDatatypeProperty( "http://data.doremus.org/ontology#U211_has_composition_of_material" );
 
-    public static final DatatypeProperty U212_has_technical_features = m_model.createDatatypeProperty( "http://data.doremus.org/org.doremus.ontology#U212_has_technical_features" );
+    public static final DatatypeProperty U212_has_technical_features = m_model.createDatatypeProperty( "http://data.doremus.org/ontology#U212_has_technical_features" );
 
-    public static final DatatypeProperty U213_has_recording_method = m_model.createDatatypeProperty( "http://data.doremus.org/org.doremus.ontology#U213_has_recording_method" );
+    public static final DatatypeProperty U213_has_recording_method = m_model.createDatatypeProperty( "http://data.doremus.org/ontology#U213_has_recording_method" );
 
-    public static final DatatypeProperty U215__has_groove_caracteristics = m_model.createDatatypeProperty( "http://data.doremus.org/org.doremus.ontology#U215__has_groove_caracteristics" );
+    public static final DatatypeProperty U215__has_groove_caracteristics = m_model.createDatatypeProperty( "http://data.doremus.org/ontology#U215__has_groove_caracteristics" );
 
-    public static final DatatypeProperty U216_has_tape_configuration = m_model.createDatatypeProperty( "http://data.doremus.org/org.doremus.ontology#U216_has_tape_configuration" );
+    public static final DatatypeProperty U216_has_tape_configuration = m_model.createDatatypeProperty( "http://data.doremus.org/ontology#U216_has_tape_configuration" );
 
-    public static final DatatypeProperty U226_has_responsibility_detail = m_model.createDatatypeProperty( "http://data.doremus.org/org.doremus.ontology#U226_has_responsibility_detail" );
+    public static final DatatypeProperty U226_has_responsibility_detail = m_model.createDatatypeProperty( "http://data.doremus.org/ontology#U226_has_responsibility_detail" );
 
-    public static final DatatypeProperty U228_has_other_distinguishing_characteristic_of_expression = m_model.createDatatypeProperty( "http://data.doremus.org/org.doremus.ontology#U228_has_other_distinguishing_characteristic_of_expression" );
+    public static final DatatypeProperty U228_has_other_distinguishing_characteristic_of_expression = m_model.createDatatypeProperty( "http://data.doremus.org/ontology#U228_has_other_distinguishing_characteristic_of_expression" );
 
-    public static final DatatypeProperty U30_foresees_quantity_of_mop = m_model.createDatatypeProperty( "http://data.doremus.org/org.doremus.ontology#U30_foresees_quantity_of_mop" );
+    public static final DatatypeProperty U30_foresees_quantity_of_mop = m_model.createDatatypeProperty( "http://data.doremus.org/ontology#U30_foresees_quantity_of_mop" );
 
-    public static final DatatypeProperty U41_has_catalogue_number = m_model.createDatatypeProperty( "http://data.doremus.org/org.doremus.ontology#U41_has_catalogue_number" );
+    public static final DatatypeProperty U41_has_catalogue_number = m_model.createDatatypeProperty( "http://data.doremus.org/ontology#U41_has_catalogue_number" );
 
-    public static final DatatypeProperty U42_has_opus_number = m_model.createDatatypeProperty( "http://data.doremus.org/org.doremus.ontology#U42_has_opus_number" );
+    public static final DatatypeProperty U42_has_opus_number = m_model.createDatatypeProperty( "http://data.doremus.org/ontology#U42_has_opus_number" );
 
-    public static final DatatypeProperty U43_has_opus_subnumber = m_model.createDatatypeProperty( "http://data.doremus.org/org.doremus.ontology#U43_has_opus_subnumber" );
+    public static final DatatypeProperty U43_has_opus_subnumber = m_model.createDatatypeProperty( "http://data.doremus.org/ontology#U43_has_opus_subnumber" );
 
-    public static final DatatypeProperty U48_foresees_quantity_of_actors = m_model.createDatatypeProperty( "http://data.doremus.org/org.doremus.ontology#U48_foresees_quantity_of_actors" );
+    public static final DatatypeProperty U48_foresees_quantity_of_actors = m_model.createDatatypeProperty( "http://data.doremus.org/ontology#U48_foresees_quantity_of_actors" );
 
-    public static final DatatypeProperty U50_has_annotation = m_model.createDatatypeProperty( "http://data.doremus.org/org.doremus.ontology#U50_has_annotation" );
+    public static final DatatypeProperty U50_has_annotation = m_model.createDatatypeProperty( "http://data.doremus.org/ontology#U50_has_annotation" );
 
-    public static final DatatypeProperty U67_has_subtitle = m_model.createDatatypeProperty( "http://data.doremus.org/org.doremus.ontology#U67_has_subtitle" );
+    public static final DatatypeProperty U67_has_subtitle = m_model.createDatatypeProperty( "http://data.doremus.org/ontology#U67_has_subtitle" );
 
-    public static final DatatypeProperty U68_has_variant_title = m_model.createDatatypeProperty( "http://data.doremus.org/org.doremus.ontology#U68_has_variant_title" );
+    public static final DatatypeProperty U68_has_variant_title = m_model.createDatatypeProperty( "http://data.doremus.org/ontology#U68_has_variant_title" );
 
-    public static final DatatypeProperty U69_has_WoO_number = m_model.createDatatypeProperty( "http://data.doremus.org/org.doremus.ontology#U69_has_WoO_number" );
+    public static final DatatypeProperty U69_has_WoO_number = m_model.createDatatypeProperty( "http://data.doremus.org/ontology#U69_has_WoO_number" );
 
-    public static final DatatypeProperty U70_has_original_title = m_model.createDatatypeProperty( "http://data.doremus.org/org.doremus.ontology#U70_has_original_title" );
+    public static final DatatypeProperty U70_has_original_title = m_model.createDatatypeProperty( "http://data.doremus.org/ontology#U70_has_original_title" );
 
-    public static final DatatypeProperty U71_has_uniform_title = m_model.createDatatypeProperty( "http://data.doremus.org/org.doremus.ontology#U71_has_uniform_title" );
+    public static final DatatypeProperty U71_has_uniform_title = m_model.createDatatypeProperty( "http://data.doremus.org/ontology#U71_has_uniform_title" );
 
-    public static final DatatypeProperty U72_has_title_note = m_model.createDatatypeProperty( "http://data.doremus.org/org.doremus.ontology#U72_has_title_note" );
+    public static final DatatypeProperty U72_has_title_note = m_model.createDatatypeProperty( "http://data.doremus.org/ontology#U72_has_title_note" );
 
-    public static final DatatypeProperty U76_has_WoO_subnumber = m_model.createDatatypeProperty( "http://data.doremus.org/org.doremus.ontology#U76_has_WoO_subnumber" );
+    public static final DatatypeProperty U76_has_WoO_subnumber = m_model.createDatatypeProperty( "http://data.doremus.org/ontology#U76_has_WoO_subnumber" );
 
-    public static final DatatypeProperty U78_estimated_duration = m_model.createDatatypeProperty( "http://data.doremus.org/org.doremus.ontology#U78_estimated_duration" );
+    public static final DatatypeProperty U78_estimated_duration = m_model.createDatatypeProperty( "http://data.doremus.org/ontology#U78_estimated_duration" );
 
-    public static final DatatypeProperty U79_has_lowest_pitch = m_model.createDatatypeProperty( "http://data.doremus.org/org.doremus.ontology#U79_has_lowest_pitch" );
+    public static final DatatypeProperty U79_has_lowest_pitch = m_model.createDatatypeProperty( "http://data.doremus.org/ontology#U79_has_lowest_pitch" );
 
-    public static final DatatypeProperty U80_has_highest_pitch = m_model.createDatatypeProperty( "http://data.doremus.org/org.doremus.ontology#U80_has_highest_pitch" );
+    public static final DatatypeProperty U80_has_highest_pitch = m_model.createDatatypeProperty( "http://data.doremus.org/ontology#U80_has_highest_pitch" );
 
-    public static final DatatypeProperty U9_has_quantity = m_model.createDatatypeProperty( "http://data.doremus.org/org.doremus.ontology#U9_has_quantity" );
+    public static final DatatypeProperty U9_has_quantity = m_model.createDatatypeProperty( "http://data.doremus.org/ontology#U9_has_quantity" );
 
-    public static final OntClass M10_Catalogue_Name = m_model.createClass( "http://data.doremus.org/org.doremus.ontology#M10_Catalogue_Name" );
+    public static final OntClass M10_Catalogue_Name = m_model.createClass( "http://data.doremus.org/ontology#M10_Catalogue_Name" );
 
-    public static final OntClass M11_Catalogue_Number = m_model.createClass( "http://data.doremus.org/org.doremus.ontology#M11_Catalogue_Number" );
+    public static final OntClass M11_Catalogue_Number = m_model.createClass( "http://data.doremus.org/ontology#M11_Catalogue_Number" );
 
-    public static final OntClass M12_Opus_Number = m_model.createClass( "http://data.doremus.org/org.doremus.ontology#M12_Opus_Number" );
+    public static final OntClass M12_Opus_Number = m_model.createClass( "http://data.doremus.org/ontology#M12_Opus_Number" );
 
-    public static final OntClass M13_Opus_Subnumber = m_model.createClass( "http://data.doremus.org/org.doremus.ontology#M13_Opus_Subnumber" );
+    public static final OntClass M13_Opus_Subnumber = m_model.createClass( "http://data.doremus.org/ontology#M13_Opus_Subnumber" );
 
-    public static final OntClass M14_Medium_Of_Performance = m_model.createClass( "http://data.doremus.org/org.doremus.ontology#M14_Medium_Of_Performance" );
+    public static final OntClass M14_Medium_Of_Performance = m_model.createClass( "http://data.doremus.org/ontology#M14_Medium_Of_Performance" );
 
-    public static final OntClass M154_Label_Name = m_model.createClass( "http://data.doremus.org/org.doremus.ontology#M154_Label_Name" );
+    public static final OntClass M154_Label_Name = m_model.createClass( "http://data.doremus.org/ontology#M154_Label_Name" );
 
-    public static final OntClass M155_Cast_Statement = m_model.createClass( "http://data.doremus.org/org.doremus.ontology#M155_Cast_Statement" );
+    public static final OntClass M155_Cast_Statement = m_model.createClass( "http://data.doremus.org/ontology#M155_Cast_Statement" );
 
-    public static final OntClass M156_Title_Statement = m_model.createClass( "http://data.doremus.org/org.doremus.ontology#M156_Title_Statement" );
+    public static final OntClass M156_Title_Statement = m_model.createClass( "http://data.doremus.org/ontology#M156_Title_Statement" );
 
-    public static final OntClass M157_Statement_of_Responsibility = m_model.createClass( "http://data.doremus.org/org.doremus.ontology#M157_Statement_of_Responsibility" );
+    public static final OntClass M157_Statement_of_Responsibility = m_model.createClass( "http://data.doremus.org/ontology#M157_Statement_of_Responsibility" );
 
-    public static final OntClass M158_Title_and_Statement_of_Responsibility = m_model.createClass( "http://data.doremus.org/org.doremus.ontology#M158_Title_and_Statement_of_Responsibility" );
+    public static final OntClass M158_Title_and_Statement_of_Responsibility = m_model.createClass( "http://data.doremus.org/ontology#M158_Title_and_Statement_of_Responsibility" );
 
-    public static final OntClass M159_Edition_Statement = m_model.createClass( "http://data.doremus.org/org.doremus.ontology#M159_Edition_Statement" );
+    public static final OntClass M159_Edition_Statement = m_model.createClass( "http://data.doremus.org/ontology#M159_Edition_Statement" );
 
-    public static final OntClass M15_Dedication_Statement = m_model.createClass( "http://data.doremus.org/org.doremus.ontology#M15_Dedication_Statement" );
+    public static final OntClass M15_Dedication_Statement = m_model.createClass( "http://data.doremus.org/ontology#M15_Dedication_Statement" );
 
-    public static final OntClass M160_Publication_Statement = m_model.createClass( "http://data.doremus.org/org.doremus.ontology#M160_Publication_Statement" );
+    public static final OntClass M160_Publication_Statement = m_model.createClass( "http://data.doremus.org/ontology#M160_Publication_Statement" );
 
-    public static final OntClass M161_Distribution_Statement = m_model.createClass( "http://data.doremus.org/org.doremus.ontology#M161_Distribution_Statement" );
+    public static final OntClass M161_Distribution_Statement = m_model.createClass( "http://data.doremus.org/ontology#M161_Distribution_Statement" );
 
-    public static final OntClass M162_Series_Statement = m_model.createClass( "http://data.doremus.org/org.doremus.ontology#M162_Series_Statement" );
+    public static final OntClass M162_Series_Statement = m_model.createClass( "http://data.doremus.org/ontology#M162_Series_Statement" );
 
-    public static final OntClass M163_Music_Format_Statement = m_model.createClass( "http://data.doremus.org/org.doremus.ontology#M163_Music_Format_Statement" );
+    public static final OntClass M163_Music_Format_Statement = m_model.createClass( "http://data.doremus.org/ontology#M163_Music_Format_Statement" );
 
-    public static final OntClass M164_Multipart_Monograph_Statement = m_model.createClass( "http://data.doremus.org/org.doremus.ontology#M164_Multipart_Monograph_Statement" );
+    public static final OntClass M164_Multipart_Monograph_Statement = m_model.createClass( "http://data.doremus.org/ontology#M164_Multipart_Monograph_Statement" );
 
-    public static final OntClass M165_Title_Proper_of_Series = m_model.createClass( "http://data.doremus.org/org.doremus.ontology#M165_Title_Proper_of_Series" );
+    public static final OntClass M165_Title_Proper_of_Series = m_model.createClass( "http://data.doremus.org/ontology#M165_Title_Proper_of_Series" );
 
-    public static final OntClass M166_Title_Proper_of_Multipart_Monograph = m_model.createClass( "http://data.doremus.org/org.doremus.ontology#M166_Title_Proper_of_Multipart_Monograph" );
+    public static final OntClass M166_Title_Proper_of_Multipart_Monograph = m_model.createClass( "http://data.doremus.org/ontology#M166_Title_Proper_of_Multipart_Monograph" );
 
-    public static final OntClass M167_Publication_Expression_Fragment = m_model.createClass( "http://data.doremus.org/org.doremus.ontology#M167_Publication_Expression_Fragment" );
+    public static final OntClass M167_Publication_Expression_Fragment = m_model.createClass( "http://data.doremus.org/ontology#M167_Publication_Expression_Fragment" );
 
-    public static final OntClass M168_Media_Type = m_model.createClass( "http://data.doremus.org/org.doremus.ontology#M168_Media_Type" );
+    public static final OntClass M168_Media_Type = m_model.createClass( "http://data.doremus.org/ontology#M168_Media_Type" );
 
-    public static final OntClass M169_Carrier_Type = m_model.createClass( "http://data.doremus.org/org.doremus.ontology#M169_Carrier_Type" );
+    public static final OntClass M169_Carrier_Type = m_model.createClass( "http://data.doremus.org/ontology#M169_Carrier_Type" );
 
-    public static final OntClass M16_Maintenance = m_model.createClass( "http://data.doremus.org/org.doremus.ontology#M16_Maintenance" );
+    public static final OntClass M16_Maintenance = m_model.createClass( "http://data.doremus.org/ontology#M16_Maintenance" );
 
-    public static final OntClass M170_Binding = m_model.createClass( "http://data.doremus.org/org.doremus.ontology#M170_Binding" );
+    public static final OntClass M170_Binding = m_model.createClass( "http://data.doremus.org/ontology#M170_Binding" );
 
-    public static final OntClass M171_Container = m_model.createClass( "http://data.doremus.org/org.doremus.ontology#M171_Container" );
+    public static final OntClass M171_Container = m_model.createClass( "http://data.doremus.org/ontology#M171_Container" );
 
-    public static final OntClass M172_Colour_Content = m_model.createClass( "http://data.doremus.org/org.doremus.ontology#M172_Colour_Content" );
+    public static final OntClass M172_Colour_Content = m_model.createClass( "http://data.doremus.org/ontology#M172_Colour_Content" );
 
-    public static final OntClass M173_Playing_Speed = m_model.createClass( "http://data.doremus.org/org.doremus.ontology#M173_Playing_Speed" );
+    public static final OntClass M173_Playing_Speed = m_model.createClass( "http://data.doremus.org/ontology#M173_Playing_Speed" );
 
-    public static final OntClass M174_Content_Type = m_model.createClass( "http://data.doremus.org/org.doremus.ontology#M174_Content_Type" );
+    public static final OntClass M174_Content_Type = m_model.createClass( "http://data.doremus.org/ontology#M174_Content_Type" );
 
-    public static final OntClass M175_Music_Format = m_model.createClass( "http://data.doremus.org/org.doremus.ontology#M175_Music_Format" );
+    public static final OntClass M175_Music_Format = m_model.createClass( "http://data.doremus.org/ontology#M175_Music_Format" );
 
-    public static final OntClass M17_Controlled_Access_Point_Creator = m_model.createClass( "http://data.doremus.org/org.doremus.ontology#M17_Controlled_Access_Point_Creator" );
+    public static final OntClass M17_Controlled_Access_Point_Creator = m_model.createClass( "http://data.doremus.org/ontology#M17_Controlled_Access_Point_Creator" );
 
-    public static final OntClass M18_Controlled_Access_Point_Denomination = m_model.createClass( "http://data.doremus.org/org.doremus.ontology#M18_Controlled_Access_Point_Denomination" );
+    public static final OntClass M18_Controlled_Access_Point_Denomination = m_model.createClass( "http://data.doremus.org/ontology#M18_Controlled_Access_Point_Denomination" );
 
-    public static final OntClass M19_Categorization = m_model.createClass( "http://data.doremus.org/org.doremus.ontology#M19_Categorization" );
+    public static final OntClass M19_Categorization = m_model.createClass( "http://data.doremus.org/ontology#M19_Categorization" );
 
-    public static final OntClass M1_Catalogue_Statement = m_model.createClass( "http://data.doremus.org/org.doremus.ontology#M1_Catalogue_Statement" );
+    public static final OntClass M1_Catalogue_Statement = m_model.createClass( "http://data.doremus.org/ontology#M1_Catalogue_Statement" );
 
-    public static final OntClass M20_Music_Group_Formation = m_model.createClass( "http://data.doremus.org/org.doremus.ontology#M20_Music_Group_Formation" );
+    public static final OntClass M20_Music_Group_Formation = m_model.createClass( "http://data.doremus.org/ontology#M20_Music_Group_Formation" );
 
-    public static final OntClass M21_Harmonic_Structure = m_model.createClass( "http://data.doremus.org/org.doremus.ontology#M21_Harmonic_Structure" );
+    public static final OntClass M21_Harmonic_Structure = m_model.createClass( "http://data.doremus.org/ontology#M21_Harmonic_Structure" );
 
-    public static final OntClass M22_Form = m_model.createClass( "http://data.doremus.org/org.doremus.ontology#M22_Form" );
+    public static final OntClass M22_Form = m_model.createClass( "http://data.doremus.org/ontology#M22_Form" );
 
-    public static final OntClass M23_Casting_Detail = m_model.createClass( "http://data.doremus.org/org.doremus.ontology#M23_Casting_Detail" );
+    public static final OntClass M23_Casting_Detail = m_model.createClass( "http://data.doremus.org/ontology#M23_Casting_Detail" );
 
-    public static final OntClass M24_Track = m_model.createClass( "http://data.doremus.org/org.doremus.ontology#M24_Track" );
+    public static final OntClass M24_Track = m_model.createClass( "http://data.doremus.org/ontology#M24_Track" );
 
-    public static final OntClass M25_Foreseen_Activity = m_model.createClass( "http://data.doremus.org/org.doremus.ontology#M25_Foreseen_Activity" );
+    public static final OntClass M25_Foreseen_Activity = m_model.createClass( "http://data.doremus.org/ontology#M25_Foreseen_Activity" );
 
-    public static final OntClass M26_Foreseen_Performance = m_model.createClass( "http://data.doremus.org/org.doremus.ontology#M26_Foreseen_Performance" );
+    public static final OntClass M26_Foreseen_Performance = m_model.createClass( "http://data.doremus.org/ontology#M26_Foreseen_Performance" );
 
-    public static final OntClass M27_Foreseen_Individual_Performance = m_model.createClass( "http://data.doremus.org/org.doremus.ontology#M27_Foreseen_Individual_Performance" );
+    public static final OntClass M27_Foreseen_Individual_Performance = m_model.createClass( "http://data.doremus.org/ontology#M27_Foreseen_Individual_Performance" );
 
-    public static final OntClass M28_Individual_Performance = m_model.createClass( "http://data.doremus.org/org.doremus.ontology#M28_Individual_Performance" );
+    public static final OntClass M28_Individual_Performance = m_model.createClass( "http://data.doremus.org/ontology#M28_Individual_Performance" );
 
-    public static final OntClass M29_Editing = m_model.createClass( "http://data.doremus.org/org.doremus.ontology#M29_Editing" );
+    public static final OntClass M29_Editing = m_model.createClass( "http://data.doremus.org/ontology#M29_Editing" );
 
-    public static final OntClass M2_Opus_Statement = m_model.createClass( "http://data.doremus.org/org.doremus.ontology#M2_Opus_Statement" );
+    public static final OntClass M2_Opus_Statement = m_model.createClass( "http://data.doremus.org/ontology#M2_Opus_Statement" );
 
-    public static final OntClass M30_Ambitus = m_model.createClass( "http://data.doremus.org/org.doremus.ontology#M30_Ambitus" );
+    public static final OntClass M30_Ambitus = m_model.createClass( "http://data.doremus.org/ontology#M30_Ambitus" );
 
-    public static final OntClass M31_Actor_Function = m_model.createClass( "http://data.doremus.org/org.doremus.ontology#M31_Actor_Function" );
+    public static final OntClass M31_Actor_Function = m_model.createClass( "http://data.doremus.org/ontology#M31_Actor_Function" );
 
-    public static final OntClass M32_Actor_Responsibility = m_model.createClass( "http://data.doremus.org/org.doremus.ontology#M32_Actor_Responsibility" );
+    public static final OntClass M32_Actor_Responsibility = m_model.createClass( "http://data.doremus.org/ontology#M32_Actor_Responsibility" );
 
-    public static final OntClass M33_Set_of_Characters = m_model.createClass( "http://data.doremus.org/org.doremus.ontology#M33_Set_of_Characters" );
+    public static final OntClass M33_Set_of_Characters = m_model.createClass( "http://data.doremus.org/ontology#M33_Set_of_Characters" );
 
-    public static final OntClass M34_Award_Assignment = m_model.createClass( "http://data.doremus.org/org.doremus.ontology#M34_Award_Assignment" );
+    public static final OntClass M34_Award_Assignment = m_model.createClass( "http://data.doremus.org/ontology#M34_Award_Assignment" );
 
-    public static final OntClass M35_Representative_Publication_Assignment = m_model.createClass( "http://data.doremus.org/org.doremus.ontology#M35_Representative_Publication_Assignment" );
+    public static final OntClass M35_Representative_Publication_Assignment = m_model.createClass( "http://data.doremus.org/ontology#M35_Representative_Publication_Assignment" );
 
-    public static final OntClass M36_Award = m_model.createClass( "http://data.doremus.org/org.doremus.ontology#M36_Award" );
+    public static final OntClass M36_Award = m_model.createClass( "http://data.doremus.org/ontology#M36_Award" );
 
-    public static final OntClass M37_Music_Scale = m_model.createClass( "http://data.doremus.org/org.doremus.ontology#M37_Music_Scale" );
+    public static final OntClass M37_Music_Scale = m_model.createClass( "http://data.doremus.org/ontology#M37_Music_Scale" );
 
-    public static final OntClass M38_Rhythmic_Pattern = m_model.createClass( "http://data.doremus.org/org.doremus.ontology#M38_Rhythmic_Pattern" );
+    public static final OntClass M38_Rhythmic_Pattern = m_model.createClass( "http://data.doremus.org/ontology#M38_Rhythmic_Pattern" );
 
-    public static final OntClass M39_Derivation_Type_Assignment = m_model.createClass( "http://data.doremus.org/org.doremus.ontology#M39_Derivation_Type_Assignment" );
+    public static final OntClass M39_Derivation_Type_Assignment = m_model.createClass( "http://data.doremus.org/ontology#M39_Derivation_Type_Assignment" );
 
-    public static final OntClass M3_Order_Number = m_model.createClass( "http://data.doremus.org/org.doremus.ontology#M3_Order_Number" );
+    public static final OntClass M3_Order_Number = m_model.createClass( "http://data.doremus.org/ontology#M3_Order_Number" );
 
-    public static final OntClass M40_Context = m_model.createClass( "http://data.doremus.org/org.doremus.ontology#M40_Context" );
+    public static final OntClass M40_Context = m_model.createClass( "http://data.doremus.org/ontology#M40_Context" );
 
-    public static final OntClass M41_Metronome_Indication = m_model.createClass( "http://data.doremus.org/org.doremus.ontology#M41_Metronome_Indication" );
+    public static final OntClass M41_Metronome_Indication = m_model.createClass( "http://data.doremus.org/ontology#M41_Metronome_Indication" );
 
-    public static final OntClass M42_Performed_Expression_Creation = m_model.createClass( "http://data.doremus.org/org.doremus.ontology#M42_Performed_Expression_Creation" );
+    public static final OntClass M42_Performed_Expression_Creation = m_model.createClass( "http://data.doremus.org/ontology#M42_Performed_Expression_Creation" );
 
-    public static final OntClass M43_Performed_Expression = m_model.createClass( "http://data.doremus.org/org.doremus.ontology#M43_Performed_Expression" );
+    public static final OntClass M43_Performed_Expression = m_model.createClass( "http://data.doremus.org/ontology#M43_Performed_Expression" );
 
-    public static final OntClass M44_Performed_Work = m_model.createClass( "http://data.doremus.org/org.doremus.ontology#M44_Performed_Work" );
+    public static final OntClass M44_Performed_Work = m_model.createClass( "http://data.doremus.org/ontology#M44_Performed_Work" );
 
-    public static final OntClass M46_Set_of_Tracks = m_model.createClass( "http://data.doremus.org/org.doremus.ontology#M46_Set_of_Tracks" );
+    public static final OntClass M46_Set_of_Tracks = m_model.createClass( "http://data.doremus.org/ontology#M46_Set_of_Tracks" );
 
-    public static final OntClass M47_WoO_Number = m_model.createClass( "http://data.doremus.org/org.doremus.ontology#M47_WoO_Number" );
+    public static final OntClass M47_WoO_Number = m_model.createClass( "http://data.doremus.org/ontology#M47_WoO_Number" );
 
-    public static final OntClass M48_WoO_Subnumber = m_model.createClass( "http://data.doremus.org/org.doremus.ontology#M48_WoO_Subnumber" );
+    public static final OntClass M48_WoO_Subnumber = m_model.createClass( "http://data.doremus.org/ontology#M48_WoO_Subnumber" );
 
-    public static final OntClass M49_Performer_Status = m_model.createClass( "http://data.doremus.org/org.doremus.ontology#M49_Performer_Status" );
+    public static final OntClass M49_Performer_Status = m_model.createClass( "http://data.doremus.org/ontology#M49_Performer_Status" );
 
-    public static final OntClass M4_Key = m_model.createClass( "http://data.doremus.org/org.doremus.ontology#M4_Key" );
+    public static final OntClass M4_Key = m_model.createClass( "http://data.doremus.org/ontology#M4_Key" );
 
-    public static final OntClass M50_Creation_or_Performance_Mode = m_model.createClass( "http://data.doremus.org/org.doremus.ontology#M50_Creation_or_Performance_Mode" );
+    public static final OntClass M50_Creation_or_Performance_Mode = m_model.createClass( "http://data.doremus.org/ontology#M50_Creation_or_Performance_Mode" );
 
-    public static final OntClass M51_Type_Of_Recording_Equipment = m_model.createClass( "http://data.doremus.org/org.doremus.ontology#M51_Type_Of_Recording_Equipment" );
+    public static final OntClass M51_Type_Of_Recording_Equipment = m_model.createClass( "http://data.doremus.org/ontology#M51_Type_Of_Recording_Equipment" );
 
-    public static final OntClass M52_Equalization_Technique = m_model.createClass( "http://data.doremus.org/org.doremus.ontology#M52_Equalization_Technique" );
+    public static final OntClass M52_Equalization_Technique = m_model.createClass( "http://data.doremus.org/ontology#M52_Equalization_Technique" );
 
-    public static final OntClass M53_Noise_Reduction_Technique = m_model.createClass( "http://data.doremus.org/org.doremus.ontology#M53_Noise_Reduction_Technique" );
+    public static final OntClass M53_Noise_Reduction_Technique = m_model.createClass( "http://data.doremus.org/ontology#M53_Noise_Reduction_Technique" );
 
-    public static final OntClass M54_Sound_Spatialization_Technique = m_model.createClass( "http://data.doremus.org/org.doremus.ontology#M54_Sound_Spatialization_Technique" );
+    public static final OntClass M54_Sound_Spatialization_Technique = m_model.createClass( "http://data.doremus.org/ontology#M54_Sound_Spatialization_Technique" );
 
-    public static final OntClass M55_Condition_of_Performance = m_model.createClass( "http://data.doremus.org/org.doremus.ontology#M55_Condition_of_Performance" );
+    public static final OntClass M55_Condition_of_Performance = m_model.createClass( "http://data.doremus.org/ontology#M55_Condition_of_Performance" );
 
-    public static final OntClass M57_Vocal_or_Instrumental_Technique = m_model.createClass( "http://data.doremus.org/org.doremus.ontology#M57_Vocal_or_Instrumental_Technique" );
+    public static final OntClass M57_Vocal_or_Instrumental_Technique = m_model.createClass( "http://data.doremus.org/ontology#M57_Vocal_or_Instrumental_Technique" );
 
-    public static final OntClass M58_Programming_Work = m_model.createClass( "http://data.doremus.org/org.doremus.ontology#M58_Programming_Work" );
+    public static final OntClass M58_Programming_Work = m_model.createClass( "http://data.doremus.org/ontology#M58_Programming_Work" );
 
-    public static final OntClass M59_Program = m_model.createClass( "http://data.doremus.org/org.doremus.ontology#M59_Program" );
+    public static final OntClass M59_Program = m_model.createClass( "http://data.doremus.org/ontology#M59_Program" );
 
-    public static final OntClass M5_Genre = m_model.createClass( "http://data.doremus.org/org.doremus.ontology#M5_Genre" );
+    public static final OntClass M5_Genre = m_model.createClass( "http://data.doremus.org/ontology#M5_Genre" );
 
-    public static final OntClass M60_Intended_Audience = m_model.createClass( "http://data.doremus.org/org.doremus.ontology#M60_Intended_Audience" );
+    public static final OntClass M60_Intended_Audience = m_model.createClass( "http://data.doremus.org/ontology#M60_Intended_Audience" );
 
-    public static final OntClass M61_Work_Type = m_model.createClass( "http://data.doremus.org/org.doremus.ontology#M61_Work_Type" );
+    public static final OntClass M61_Work_Type = m_model.createClass( "http://data.doremus.org/ontology#M61_Work_Type" );
 
-    public static final OntClass M62_Hierarchical_Level = m_model.createClass( "http://data.doremus.org/org.doremus.ontology#M62_Hierarchical_Level" );
+    public static final OntClass M62_Hierarchical_Level = m_model.createClass( "http://data.doremus.org/ontology#M62_Hierarchical_Level" );
 
-    public static final OntClass M6_Casting = m_model.createClass( "http://data.doremus.org/org.doremus.ontology#M6_Casting" );
+    public static final OntClass M6_Casting = m_model.createClass( "http://data.doremus.org/ontology#M6_Casting" );
 
-    public static final OntClass M7_Linguistic_Appellation = m_model.createClass( "http://data.doremus.org/org.doremus.ontology#M7_Linguistic_Appellation" );
+    public static final OntClass M7_Linguistic_Appellation = m_model.createClass( "http://data.doremus.org/ontology#M7_Linguistic_Appellation" );
 
-    public static final OntClass M8_Tempo = m_model.createClass( "http://data.doremus.org/org.doremus.ontology#M8_Tempo" );
+    public static final OntClass M8_Tempo = m_model.createClass( "http://data.doremus.org/ontology#M8_Tempo" );
 
-    public static final OntClass M9_Derivation_Type = m_model.createClass( "http://data.doremus.org/org.doremus.ontology#M9_Derivation_Type" );
+    public static final OntClass M9_Derivation_Type = m_model.createClass( "http://data.doremus.org/ontology#M9_Derivation_Type" );
 
 }

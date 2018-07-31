@@ -48,6 +48,9 @@ public class F22_SelfContainedExpression extends DoremusResource {
     Pattern.CASE_INSENSITIVE);
   private static final Pattern ENG_KEY_REGEX = Pattern.compile(" in (.+ (maj|min)(or)?)", Pattern.CASE_INSENSITIVE);
 
+  private static final String CASTING_REGEX = "pour (?!l[ea']).+";
+
+
   private final List<String> composers;
 
 
@@ -97,18 +100,30 @@ public class F22_SelfContainedExpression extends DoremusResource {
     title = parseTitle(Utils.fixCase(title, true));
     System.out.println(oeuvre.getId() + " | " + title);
 
+    if (oeuvre.isInstrumental()) addNote("Instrumental");
+    else addNote("Vocal");
+
     this.resource.addProperty(CIDOC.P102_has_title, title)
       .addProperty(RDFS.label, title);
 
 
     if (oeuvre.getSubtitle() != null)
-      for (String t : oeuvre.getSubtitle().split(" / ")) {
+      for (String t : oeuvre.getSubtitle().split("( / |\n)")) {
 
         t = t.trim();
         if (t.matches(TITLE_SKIP_REGEX)) continue;
-        if (t.toLowerCase().startsWith("pour"))
-          addCasting(t);
-        else this.resource.addProperty(MUS.U67_has_subtitle, t);
+        if (t.toLowerCase().matches("pour (?!l[ea']).+")) {
+          boolean first=true;
+          for(String x : t.split("/")){
+            if(first){
+              addCasting(x, oeuvre.isInstrumental());
+              first = false;
+              continue;
+            }
+            this.resource.addProperty(MUS.U67_has_subtitle, x);
+          }
+
+        } else this.resource.addProperty(MUS.U67_has_subtitle, t);
       }
 
     if (oeuvre.getVariantTitle() != null)
@@ -157,8 +172,6 @@ public class F22_SelfContainedExpression extends DoremusResource {
     if (oeuvre.getNote() != null)
       addNote(oeuvre.getNote());
 
-    if (oeuvre.isInstrumental()) addNote("Instrumental");
-    else addNote("Vocal");
   }
 
   private String parseTitle(String title) {
@@ -281,12 +294,12 @@ public class F22_SelfContainedExpression extends DoremusResource {
     return title.replaceAll("\\s+", " ");
   }
 
-  private void addCasting(String text) {
-    Resource cat = model.createResource(this.uri.toString() + "/casting/1")
-      .addProperty(RDF.type, MUS.M6_Casting)
-      .addProperty(RDFS.comment, text)
-      .addProperty(CIDOC.P3_has_note, text);
-    this.resource.addProperty(MUS.U13_has_casting, cat);
+  private void addCasting(String text, boolean instrumental) {
+    String uri = this.uri.toString() + "/casting/1";
+    M6_Casting casting = new M6_Casting(text, uri, instrumental);
+
+    this.resource.addProperty(MUS.U13_has_casting, casting.asResource());
+    model.add(casting.getModel());
   }
 
   private void addCatalogue(String note, String code, String num, String composer) {
