@@ -169,10 +169,10 @@ public class Converter {
   }
 
   private static void parseRecord(Oeuvre source, String outputFolder) {
-//    if (Integer.parseInt(source.getId()) < 398479) return;
+    if (Integer.parseInt(source.getId()) != 383354) return;
 //    System.out.println(source.getId());
-    File out = new File(Paths.get(outputFolder, source.getId() + ".ttl").toString());
-    if (out.exists()) return;
+//    File out = new File(Paths.get(outputFolder, source.getId() + ".ttl").toString());
+//    if (out.exists()) return;
     try {
       RecordConverter r = new RecordConverter(source);
       Model m = r.getModel();

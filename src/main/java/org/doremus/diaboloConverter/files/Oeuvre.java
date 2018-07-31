@@ -22,13 +22,13 @@ public class Oeuvre extends DiaboloRecord {
   private static Map<String, List<String>> langMap = null;
 
   @XmlElement(name = "DORIS_KEY")
-  private String id;
+  protected String id;
   @XmlElement(name = "TITRE_OEUVRE")
-  private String title;
+  protected String title;
   @XmlElement(name = "SOUS_TITRE_OEUVRE")
   private String subTitle;
   @XmlElement(name = "AUTRE_TITRE_OEUVRE")
-  private String variantTitle;
+  protected String variantTitle;
   @XmlElement(name = "TITRE_DISQUE")
   private String discTitle;
   @XmlElement(name = "VERS")
@@ -38,9 +38,9 @@ public class Oeuvre extends DiaboloRecord {
   @XmlElement(name = "INST")
   private String instrumental;
   @XmlElement(name = "DATE_COMP_DEB")
-  private String startDate;
+  String startDate;
   @XmlElement(name = "DATE_COMP_FIN")
-  private String endDate;
+  protected String endDate;
   @XmlElement(name = "DATE_PUBLIC")
   private String datePublication;
   @XmlElement(name = "DATE_CREA")

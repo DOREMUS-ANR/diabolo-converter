@@ -113,17 +113,17 @@ public class F22_SelfContainedExpression extends DoremusResource {
         t = t.trim();
         if (t.matches(TITLE_SKIP_REGEX)) continue;
         if (t.toLowerCase().matches("pour (?!l[ea']).+")) {
-          boolean first=true;
-          for(String x : t.split("/")){
-            if(first){
+          boolean first = true;
+          for (String x : t.split("/")) {
+            if (first) {
               addCasting(x, oeuvre.isInstrumental());
               first = false;
               continue;
             }
-            this.resource.addProperty(MUS.U67_has_subtitle, x);
+            this.resource.addProperty(MUS.U67_has_subtitle, Utils.fixCase(x));
           }
 
-        } else this.resource.addProperty(MUS.U67_has_subtitle, t);
+        } else this.resource.addProperty(MUS.U67_has_subtitle, Utils.fixCase(t));
       }
 
     if (oeuvre.getVariantTitle() != null)
@@ -138,6 +138,11 @@ public class F22_SelfContainedExpression extends DoremusResource {
     for (Genre g : genres) {
       if (g.isVoice() || g.isRecit()) continue;
       String label = g.getLabel();
+      if (label == null) {
+        Resource concept = VocabularyManager.getVocabulary("diabolo-genre").getConcept(g.getId());
+        this.resource.addProperty(MUS.U12_has_genre, concept);
+        continue;
+      }
 
       if (g.is("169")) {
         this.resource.addProperty(CIDOC.P103_was_intended_for,

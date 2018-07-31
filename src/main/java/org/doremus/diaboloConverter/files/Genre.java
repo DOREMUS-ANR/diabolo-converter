@@ -36,6 +36,14 @@ public class Genre {
   @CsvBindByName(column = "AUTRES")
   private String otherType;
 
+  public Genre() {
+  }
+
+  public Genre(String id) {
+    this.id = id;
+    this.label = null;
+  }
+
   public String getType() {
     if (categorization)
       return "categorization";
@@ -52,8 +60,12 @@ public class Genre {
     if (list == null) init();
 
     return list.stream()
-            .filter(x -> x.id.equals(id))
-            .findFirst().orElse(null);
+      .filter(x -> x.id.equals(id))
+      .findFirst().orElse(new Genre(id));
+  }
+
+  public String getId() {
+    return id;
   }
 
   public boolean isReligion() {
@@ -98,9 +110,10 @@ public class Genre {
 
   public static List<Genre> getGenresOf(String workId) {
     if (list == null) init();
+
     return map.getOrDefault(workId, new ArrayList<>()).stream()
-            .map(Genre::get)
-            .collect(Collectors.toList());
+      .map(Genre::get)
+      .collect(Collectors.toList());
   }
 
   public String getGenreUri() {

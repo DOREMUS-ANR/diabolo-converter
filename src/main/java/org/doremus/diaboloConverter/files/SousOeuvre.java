@@ -7,31 +7,34 @@ import java.util.List;
 
 @XmlAccessorType(XmlAccessType.FIELD)
 public class SousOeuvre extends Oeuvre {
-  @XmlElement(name = "DORIS_KEY")
-  private String workId;
   @XmlElement(name = "SOUSOEUVRE_KEY")
-  private String id;
+  private String _id;
   @XmlElement(name = "TITRE_SO")
-  private String title;
+  private String _title;
   @XmlElement(name = "AUT_TIT_SO")
-  private String variantTitle;
+  private String _variantTitle;
   @XmlElement(name = "DATE_COMP_DEB")
-  private String startDate;
+  private String _startDate;
   @XmlElement(name = "DATE_COMP_FIN")
-  private String endDate;
+  private String _endDate;
 
   @Override
   public String getId() {
-    return workId + id;
+    return this.id + _id;
   }
 
   String getWorkId() {
-    return workId;
+    this.title = _title;
+    this.variantTitle = _variantTitle;
+    this.startDate = _startDate;
+    this.endDate = _endDate;
+
+    return id;
   }
 
   @Override
   public List<Interp> getAuthors() {
-    return SousOeuvres.authorsOf(this.getId());
+    return SousOeuvres.authorsOf(this._id);
   }
 
 

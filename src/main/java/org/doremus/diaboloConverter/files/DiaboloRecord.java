@@ -16,9 +16,7 @@ public abstract class DiaboloRecord {
 
   public abstract String getId();
 
-  static Map<String, List<String>> toStringMap(File source, String fieldKey, String fieldValue) throws
-          FileNotFoundException,
-          XMLStreamException {
+  static Map<String, List<String>> toStringMap(File source, String fieldKey, String fieldValue) throws FileNotFoundException, XMLStreamException {
     Map<String, List<String>> map = new HashMap<>();
 
     XMLInputFactory xif = XMLInputFactory.newFactory();
@@ -28,10 +26,10 @@ public abstract class DiaboloRecord {
     while (xsr.hasNext()) {
       int i = xsr.next();
       if (i != XMLStreamConstants.START_ELEMENT) continue;
-
       if (xsr.getLocalName().equals(fieldKey)) {
         currentKey = xsr.getElementText();
-        map.put(currentKey, new ArrayList<>());
+        if (!map.containsKey(currentKey))
+          map.put(currentKey, new ArrayList<>());
       } else if (xsr.getLocalName().equals(fieldValue))
         map.get(currentKey).add(xsr.getElementText());
     }
@@ -39,7 +37,7 @@ public abstract class DiaboloRecord {
     return map;
   }
 
-  static Map<String,String> toDictionary(File source, String fieldKey, String fieldValue) throws XMLStreamException, FileNotFoundException {
+  static Map<String, String> toDictionary(File source, String fieldKey, String fieldValue) throws XMLStreamException, FileNotFoundException {
     Map<String, String> map = new HashMap<>();
 
     XMLInputFactory xif = XMLInputFactory.newFactory();

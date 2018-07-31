@@ -62,8 +62,7 @@ public class F28_ExpressionCreation extends DoremusResource {
         .addProperty(RDF.type, CIDOC.E7_Activity)
         .addProperty(CIDOC.P14_carried_out_by, person.asResource());
 
-      if (function != null)
-        activity.addProperty(MUS.U31_had_function, function);
+      activity.addProperty(MUS.U31_had_function, function != null ? function : "composer");
 
       this.resource.addProperty(CIDOC.P9_consists_of, activity.asResource());
 

@@ -13,6 +13,7 @@ import javax.xml.stream.XMLStreamException;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.nio.file.Paths;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
@@ -38,7 +39,7 @@ public class SousOeuvres {
   public static List<Interp> authorsOf(String id) {
     if (authors == null) init();
 
-    return authors.get(id).stream()
+    return authors.getOrDefault(id, new ArrayList<>()).stream()
       .map(Interp::new)
       .collect(Collectors.toList());
   }
