@@ -169,7 +169,7 @@ public class Converter {
   }
 
   private static void parseRecord(Oeuvre source, String outputFolder) {
-    if (Integer.parseInt(source.getId()) != 383354) return;
+    if (Integer.parseInt(source.getId()) != 768330) return;
 //    System.out.println(source.getId());
 //    File out = new File(Paths.get(outputFolder, source.getId() + ".ttl").toString());
 //    if (out.exists()) return;

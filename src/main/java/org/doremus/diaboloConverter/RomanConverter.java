@@ -16,12 +16,14 @@ public class RomanConverter {
    * @return integer
    */
   public static int toNumerical(String roman) {
+    if (roman.isEmpty()) return 0;
     for (int i = 0; i < NUMBER_LETTERS.length; i++) { // Loop through all the letters
       if (roman.startsWith(NUMBER_LETTERS[i])) // Check if the string starts with that letter
-      return NUMBER_VALUES[i] + toNumerical(roman.replaceFirst(NUMBER_LETTERS[i], "")); // Rinse and repeats until the string is empty and return it
+        return NUMBER_VALUES[i] + toNumerical(roman.replaceFirst(NUMBER_LETTERS[i], "")); // Rinse and repeats until the string is empty and return it
     }
 
-    return 0; // If something went wrong, simply return 0
+    // If something went wrong, throw exception
+    throw new NumberFormatException("Char not allowed: " + roman.charAt(0));
   }
 
   /**
@@ -58,6 +60,11 @@ public class RomanConverter {
 
 
   public static boolean isRoman(String num) {
-   return toNumerical(num) != 0;
+    try {
+      toNumerical(num);
+      return true;
+    } catch (NumberFormatException e) {
+      return false;
+    }
   }
 }

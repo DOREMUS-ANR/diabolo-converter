@@ -20,7 +20,6 @@ public class NomCom {
 
   public static String get(String id) {
     if (list == null) init();
-    System.out.println("--" + id);
     return WordUtils.capitalizeFully(list.get(id));
   }
 

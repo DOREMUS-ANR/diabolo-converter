@@ -187,8 +187,8 @@ public class F22_SelfContainedExpression extends DoremusResource {
     // opus number
     Matcher opusMatch = OPUS_REGEX.matcher(text);
     if (opusMatch.find()) {
-      String note = opusMatch.group(0);
-      String opus = opusMatch.group(1);
+      String note = opusMatch.group(0).trim();
+      String opus = opusMatch.group(1).trim();
       String opusSub = opusMatch.group(2);
 
       addOpus(note, opus, opusSub);
@@ -204,8 +204,8 @@ public class F22_SelfContainedExpression extends DoremusResource {
     // WoO number
     Matcher wooMatch = WOO_PATTERN.matcher(text);
     if (wooMatch.find()) {
-      String note = wooMatch.group(0);
-      String woo = wooMatch.group(1);
+      String note = wooMatch.group(0).trim();
+      String woo = wooMatch.group(1).trim();
       String subWoo = wooMatch.group(2);
       addOpus(note, woo, subWoo);
       text = text.replace(note, "");
@@ -217,14 +217,18 @@ public class F22_SelfContainedExpression extends DoremusResource {
         StmtIterator it = res.listProperties(MODS_ID_PROP);
         while (it.hasNext()) {
           String code = it.nextStatement().getString();
-          Pattern catPattern = Pattern.compile(" " + code + "[ .] ?((?:\\d[0-9a-z]*|[IXV]+)( ?: ?[^\\s]+)?)" +
-              NUM_REGEX_STRING + "?",
+          Pattern catPattern = Pattern.compile(" " + code + "[ .]? ?((\\d[0-9a-z]*|[IXV]+[abc]?)(?: ?: ?(\\d[^\\s]*)|" +
+              NUM_REGEX_STRING + ")?)(?: [aà] (\\d+))?",
             Pattern.CASE_INSENSITIVE);
+
           Matcher catMatch = catPattern.matcher(text);
           if (catMatch.find()) {
             String note = catMatch.group(0);
-            String catNum = catMatch.group(1).trim();
-            addCatalogue(note, code, catNum, u);
+            String num = catMatch.group(1).trim();
+            String range = catMatch.group(5);
+            if (range != null) num += "-" + range;
+
+            addCatalogue(note, code, num, u);
             text = text.replace(note, "");
             break;
           }
@@ -290,7 +294,8 @@ public class F22_SelfContainedExpression extends DoremusResource {
       this.addNote("Duo");
 
     } else if (content.matches(ARTICLES_REGEX) || content.matches("\\d+")) {
-      title = StringUtils.capitalize(content) + " " + title.replace(outer, "");
+      String separator = content.endsWith("'") ? "" : " "; // no space if the article ends with the apostrophe (')
+      title = StringUtils.capitalize(content) + separator + title.replace(outer, "");
     }
     // if not, normally it is part of the title
 
@@ -328,7 +333,6 @@ public class F22_SelfContainedExpression extends DoremusResource {
     if (match == null)
       M1CatalogStatement.addProperty(MUS.U40_has_catalogue_name, code);
     else M1CatalogStatement.addProperty(MUS.U40_has_catalogue_name, match);
-
     M1CatalogStatement.addProperty(MUS.U41_has_catalogue_number, Utils.toSafeNumLiteral(num));
   }
 
