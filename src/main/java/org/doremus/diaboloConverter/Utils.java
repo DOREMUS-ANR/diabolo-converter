@@ -61,7 +61,7 @@ public class Utils {
   public static String notEmptyString(String text) {
     if (text == null) return null;
     text = text.trim();
-    if (text.isEmpty()) return null;
+    if (text.isEmpty() || text.equals(".")) return null;
     else return text;
   }
 

@@ -87,7 +87,7 @@ public class RecordConverter {
 
     if (source.getMotherTitle() != null) {
       F14_IndividualWork f14m = new F14_IndividualWork(source, "m" + source.getId());
-      F22_SelfContainedExpression f22m = new F22_SelfContainedExpression(source, true);
+      F22_SelfContainedExpression f22m = new F22_SelfContainedExpression(source, f28.getComposers(), true);
       f14m.add(f22m);
       f14m.add(f14);
       f28.add(f14m).add(f22m);

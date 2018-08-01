@@ -84,12 +84,27 @@ public class F22_SelfContainedExpression extends DoremusResource {
       .addProperty(MUS.U94_has_work_type, "musical work")
       .addProperty(DCTerms.identifier, this.identifier);
 
-    if (isMother) {
-      this.resource.addProperty(CIDOC.P102_has_title, oeuvre.getMotherTitle())
-        .addProperty(RDFS.label, oeuvre.getMotherTitle());
-    } else {
-      parseWork();
+    if (isMother) parseMotherWork();
+    else parseWork();
+
+  }
+
+  private void parseMotherWork() {
+    Oeuvre oeuvre = (Oeuvre) this.record;
+
+    String title = oeuvre.getMotherTitle();
+    String[] parts = title.split("( / |\n)");
+    if (parts.length > 1) {
+      title = parts[0];
+      this.resource.addProperty(MUS.U68_has_variant_title, Utils.fixCase(parts[1]));
     }
+
+    title = parseTitle(Utils.fixCase(title, true));
+    System.out.println(this.identifier + " | " + title);
+
+    this.resource.addProperty(CIDOC.P102_has_title, title)
+      .addProperty(RDFS.label, title);
+
   }
 
   private void parseWork() {
@@ -127,7 +142,7 @@ public class F22_SelfContainedExpression extends DoremusResource {
       }
 
     if (oeuvre.getVariantTitle() != null)
-      this.resource.addProperty(MUS.U68_has_variant_title, oeuvre.getVariantTitle());
+      this.resource.addProperty(MUS.U68_has_variant_title, Utils.fixCase(oeuvre.getVariantTitle()));
 
 
     List<Genre> genres = Genre.getGenresOf(identifier);
