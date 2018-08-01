@@ -127,7 +127,7 @@ public class F22_SelfContainedExpression extends DoremusResource {
 
         t = t.trim();
         if (t.matches(TITLE_SKIP_REGEX)) continue;
-        if (t.toLowerCase().matches("pour (?!l[ea']).+")) {
+        if (t.toLowerCase().matches(CASTING_REGEX)) {
           boolean first = true;
           for (String x : t.split("/")) {
             if (first) {
@@ -193,10 +193,11 @@ public class F22_SelfContainedExpression extends DoremusResource {
   }
 
   private String parseTitle(String title) {
-    Matcher m = Utils.BRACKETS_PATTERN.matcher(title);
-    while (m.find())
-      title = processBrackets(title, m);
-
+    if (!title.contains("/")) {
+      Matcher m = Utils.BRACKETS_PATTERN.matcher(title);
+      while (m.find())
+        title = processBrackets(title, m);
+    }
     String text = title;
 
     // opus number
@@ -235,6 +236,7 @@ public class F22_SelfContainedExpression extends DoremusResource {
           Pattern catPattern = Pattern.compile(" " + code + "[ .]? ?((\\d[0-9a-z]*|[IXV]+[abc]?)(?: ?: ?(\\d[^\\s]*)|" +
               NUM_REGEX_STRING + ")?)(?: [aà] (\\d+))?",
             Pattern.CASE_INSENSITIVE);
+          System.out.println(catPattern);
 
           Matcher catMatch = catPattern.matcher(text);
           if (catMatch.find()) {

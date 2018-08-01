@@ -36,6 +36,4 @@ public class SousOeuvre extends Oeuvre {
   public List<Interp> getAuthors() {
     return SousOeuvres.authorsOf(this._id);
   }
-
-
 }

@@ -169,10 +169,9 @@ public class Converter {
   }
 
   private static void parseRecord(Oeuvre source, String outputFolder) {
-//    if (Integer.parseInt(source.getId()) != 395020) return;
-//    System.out.println(source.getId());
-//    File out = new File(Paths.get(outputFolder, source.getId() + ".ttl").toString());
-//    if (out.exists()) return;
+    // if (Integer.parseInt(source.getId()) != 438360) return;
+    String outPath = Paths.get(outputFolder, source.getId() + ".ttl").toString();
+    // if ((new File(outPath)).exists()) return;
     try {
       RecordConverter r = new RecordConverter(source);
       Model m = r.getModel();
@@ -182,7 +181,7 @@ public class Converter {
       VocabularyManager.string2uri(m);
       if (!modifiedOut) modifiedOut = addModified(m);
 
-      writeTtl(m, Paths.get(outputFolder, source.getId() + ".ttl"));
+      writeTtl(m, outPath);
     } catch (IOException e) {
       e.printStackTrace();
     }
