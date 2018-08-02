@@ -7,7 +7,7 @@ import org.apache.jena.rdf.model.Property;
 import org.apache.jena.rdf.model.Resource;
 import org.apache.jena.rdf.model.ResourceFactory;
 import org.apache.jena.rdf.model.StmtIterator;
-import org.apache.jena.vocabulary.DCTerms;
+import org.apache.jena.vocabulary.DC;
 import org.apache.jena.vocabulary.RDF;
 import org.apache.jena.vocabulary.RDFS;
 import org.doremus.diaboloConverter.ConstructURI;
@@ -82,7 +82,7 @@ public class F22_SelfContainedExpression extends DoremusResource {
     this.resource = model.createResource(this.uri.toString())
       .addProperty(RDF.type, FRBROO.F22_Self_Contained_Expression)
       .addProperty(MUS.U94_has_work_type, "musical work")
-      .addProperty(DCTerms.identifier, this.identifier);
+      .addProperty(DC.identifier, this.identifier);
 
     if (isMother) parseMotherWork();
     else parseWork();

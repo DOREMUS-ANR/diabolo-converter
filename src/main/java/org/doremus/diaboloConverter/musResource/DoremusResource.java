@@ -4,7 +4,7 @@ import org.apache.jena.rdf.model.Model;
 import org.apache.jena.rdf.model.ModelFactory;
 import org.apache.jena.rdf.model.Resource;
 import org.apache.jena.util.ResourceUtils;
-import org.apache.jena.vocabulary.DCTerms;
+import org.apache.jena.vocabulary.DC;
 import org.apache.jena.vocabulary.RDFS;
 import org.doremus.diaboloConverter.ConstructURI;
 import org.doremus.diaboloConverter.files.DiaboloRecord;
@@ -46,7 +46,7 @@ public abstract class DoremusResource {
     try {
       this.uri = ConstructURI.build(this.sourceDb, this.className, this.identifier);
       this.resource = model.createResource(this.uri.toString())
-        .addProperty(DCTerms.identifier, this.identifier);
+        .addProperty(DC.identifier, this.identifier);
     } catch (URISyntaxException e) {
       e.printStackTrace();
     }

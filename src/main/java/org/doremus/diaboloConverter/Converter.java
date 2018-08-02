@@ -204,6 +204,7 @@ public class Converter {
     m.setNsPrefix("efrbroo", FRBROO.getURI());
     m.setNsPrefix("xsd", XSD.getURI());
     m.setNsPrefix("dcterms", DCTerms.getURI());
+    m.setNsPrefix("dc", DC.getURI());
     m.setNsPrefix("owl", OWL.getURI());
     m.setNsPrefix("foaf", FOAF.getURI());
     m.setNsPrefix("rdfs", RDFS.getURI());
