@@ -135,10 +135,9 @@ public class F22_SelfContainedExpression extends DoremusResource {
               first = false;
               continue;
             }
-            this.resource.addProperty(MUS.U67_has_subtitle, Utils.fixCase(x));
+            this.addProperty(MUS.U67_has_subtitle, Utils.fixCase(x));
           }
-
-        } else this.resource.addProperty(MUS.U67_has_subtitle, Utils.fixCase(t));
+        } else this.addProperty(MUS.U67_has_subtitle, Utils.fixCase(t));
       }
 
     if (oeuvre.getVariantTitle() != null)
@@ -236,7 +235,6 @@ public class F22_SelfContainedExpression extends DoremusResource {
           Pattern catPattern = Pattern.compile(" " + code + "[ .]? ?((\\d[0-9a-z]*|[IXV]+[abc]?)(?: ?: ?(\\d[^\\s]*)|" +
               NUM_REGEX_STRING + ")?)(?: [aà] (\\d+))?",
             Pattern.CASE_INSENSITIVE);
-          System.out.println(catPattern);
 
           Matcher catMatch = catPattern.matcher(text);
           if (catMatch.find()) {

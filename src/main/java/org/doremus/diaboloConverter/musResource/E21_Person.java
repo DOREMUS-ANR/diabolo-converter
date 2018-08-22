@@ -140,25 +140,6 @@ public class E21_Person extends DoremusResource {
     model.add(ts.getModel());
   }
 
-
-  public void addProperty(Property property, Literal object) {
-    if (property == null || object == null) return;
-    resource.addProperty(property, object);
-  }
-
-  private void addProperty(Property property, String object, String lang) {
-    if (property == null || object == null || object.isEmpty()) return;
-
-    if (lang != null)
-      resource.addProperty(property, model.createLiteral(object, lang));
-    else
-      resource.addProperty(property, object);
-  }
-
-  private void addProperty(Property property, String object) {
-    addProperty(property, object, null);
-  }
-
   private void addPropertyResource(Property property, String uri) {
     if (property == null || uri == null) return;
     resource.addProperty(property, model.createResource(uri));
@@ -244,7 +225,6 @@ public class E21_Person extends DoremusResource {
         "PREFIX prov: <" + PROV.getURI() + ">\n" +
         "PREFIX schema: <" + Schema.getURI() + ">\n" +
         "SELECT DISTINCT ?s " +
-        "FROM <http://data.doremus.org/bnf> " +
         "WHERE { " +
         "?s a ecrm:E21_Person; foaf:name ?name." +
         (birthYear != null ? "?s schema:birthDate ?date. FILTER regex(str(?date), \"" + birthYear +

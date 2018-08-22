@@ -1,10 +1,11 @@
 package org.doremus.diaboloConverter.musResource;
 
-import org.apache.jena.rdf.model.Model;
-import org.apache.jena.rdf.model.ModelFactory;
-import org.apache.jena.rdf.model.Resource;
+import org.apache.jena.datatypes.xsd.XSDDatatype;
+import org.apache.jena.ontology.OntClass;
+import org.apache.jena.rdf.model.*;
 import org.apache.jena.util.ResourceUtils;
 import org.apache.jena.vocabulary.DC;
+import org.apache.jena.vocabulary.RDF;
 import org.apache.jena.vocabulary.RDFS;
 import org.doremus.diaboloConverter.ConstructURI;
 import org.doremus.diaboloConverter.files.DiaboloRecord;
@@ -98,6 +99,49 @@ public abstract class DoremusResource {
 
   public URI getUri() {
     return uri;
+  }
+
+  protected void setClass(OntClass _class) {
+    this.resource.addProperty(RDF.type, _class);
+  }
+
+  public DoremusResource addProperty(Property property, DoremusResource resource) {
+    if (resource != null) {
+      this.addProperty(property, resource.asResource());
+      this.model.add(resource.getModel());
+    }
+    return this;
+  }
+
+  public DoremusResource addProperty(Property property, Resource resource) {
+    if (resource != null) this.resource.addProperty(property, resource);
+    return this;
+  }
+
+  public DoremusResource addProperty(Property property, String literal) {
+    if (literal != null && !literal.isEmpty()) this.resource.addProperty(property, literal.trim());
+    return this;
+  }
+
+  public DoremusResource addProperty(Property property, String literal, String lang) {
+    if (literal != null && !literal.isEmpty()) this.resource.addProperty(property, literal.trim(), lang);
+    return this;
+  }
+
+  protected DoremusResource addProperty(Property property, Literal literal) {
+    if (literal != null) this.resource.addProperty(property, literal);
+    return this;
+  }
+
+  protected DoremusResource addProperty(Property property, String literal, XSDDatatype datatype) {
+    if (literal != null && !literal.isEmpty()) this.resource.addProperty(property, literal.trim(), datatype);
+    return this;
+  }
+
+  public void addTimeSpan(E52_TimeSpan timeSpan) {
+    if(timeSpan!=null&& timeSpan.asResource()!= null)
+      this.resource.addProperty(CIDOC.P4_has_time_span, timeSpan.asResource());
+    this.model.add(timeSpan.getModel());
   }
 
 }

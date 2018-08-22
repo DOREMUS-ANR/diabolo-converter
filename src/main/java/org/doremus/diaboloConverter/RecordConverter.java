@@ -90,6 +90,7 @@ public class RecordConverter {
       F22_SelfContainedExpression f22m = new F22_SelfContainedExpression(source, f28.getComposers(), true);
       f14m.add(f22m);
       f14m.add(f14);
+      f22m.add(f22);
       f28.add(f14m).add(f22m);
       model.add(f22m.getModel()).add(f14m.getModel());
     }
@@ -99,6 +100,7 @@ public class RecordConverter {
       F22_SelfContainedExpression f22c = new F22_SelfContainedExpression(w);
       f14c.add(f22c);
       f14.add(f14c);
+      f22.add(f22c);
       if (w.containsAnyDate() || w.getAuthors() != null) {
         F28_ExpressionCreation f28c = new F28_ExpressionCreation(w, false);
         f28.add(f14c).add(f22c);

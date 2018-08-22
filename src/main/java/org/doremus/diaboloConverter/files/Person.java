@@ -16,8 +16,8 @@ import java.util.regex.Pattern;
 public class Person extends DiaboloRecord {
   private static final String PSEUDO_REGEX = "((?:utilise|sous) les? )?ps?eudo(?:nyme)?(s)?" +
     "(?: ?\\/ ?(?:nom de resistant|diminutif)| de sc[eéè]ne| probables?)? ?(de |d')?:?(.+)";
-  private static final String ALIAS_REGEX = "(etat[- ]civil|alias|nom complet|(?:veritable|vrai) nom|ne|dit aussi) :?" +
-    "(de )?(.+)";
+  private static final String ALIAS_REGEX = "(etat[- ]civil|alias|nom complet|(?:veritable|vrai) nom|ne|dit aussi) " +
+    "(de )?:?(.+)";
   private static final Pattern PSEUDO_PATTERN = Pattern.compile(PSEUDO_REGEX, Pattern.CASE_INSENSITIVE);
   private static final Pattern ALIAS_PATTERN = Pattern.compile(ALIAS_REGEX, Pattern.CASE_INSENSITIVE);
 
@@ -100,7 +100,7 @@ public class Person extends DiaboloRecord {
   }
 
   public String getComment() {
-    return nameInfo;
+    return Utils.notEmptyString(nameInfo);
   }
 
   @Override
