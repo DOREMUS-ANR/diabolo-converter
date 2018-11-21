@@ -75,7 +75,7 @@ public class Utils {
     XSDDatatype type = XSDDatatype.XSDgYear;
     switch (StringUtils.countMatches(date, "-")) {
       case 1:
-        type = XSDDatatype.XSDgMonth;
+        type = XSDDatatype.XSDgYearMonth;
         break;
       case 2:
         type = XSDDatatype.XSDdate;
