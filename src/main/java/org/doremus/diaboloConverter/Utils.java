@@ -7,10 +7,12 @@ import org.apache.jena.query.*;
 import org.apache.jena.rdf.model.Literal;
 import org.apache.jena.rdf.model.RDFNode;
 import org.apache.jena.rdf.model.ResourceFactory;
+import org.doremus.diaboloConverter.musResource.E52_TimeSpan;
 
 import java.util.Arrays;
 import java.util.List;
 import java.util.Objects;
+import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
@@ -78,6 +80,12 @@ public class Utils {
       case 2:
         type = XSDDatatype.XSDdate;
     }
+
+    Matcher bcmatch = E52_TimeSpan.BC_PATTERN.matcher(date);
+    if (bcmatch.find())
+      date = "-" + date.replaceAll(E52_TimeSpan.BC_REGEX, "");
+
+    if (!date.matches("^-?\\d{4}(-\\d{2}(-\\d{2})?)?")) return null;
     return ResourceFactory.createTypedLiteral(date, type);
   }
 

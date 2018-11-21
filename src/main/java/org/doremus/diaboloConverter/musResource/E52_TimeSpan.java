@@ -11,8 +11,12 @@ import java.net.URI;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.regex.Pattern;
 
 public class E52_TimeSpan extends DoremusResource {
+  public static final String BC_REGEX = "AV *JC?$";
+  public static final Pattern BC_PATTERN = Pattern.compile(BC_REGEX);
+
   public static final DateFormat ISODateFormat = new SimpleDateFormat("yyyy-MM-dd");
   private Literal start, end;
 
