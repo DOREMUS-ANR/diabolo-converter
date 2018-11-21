@@ -1,9 +1,9 @@
 package org.doremus.diaboloConverter.musResource;
 
+import io.github.pasqlisena.RomanConverter;
 import org.apache.jena.rdf.model.Resource;
 import org.apache.jena.rdf.model.ResourceFactory;
 import org.apache.jena.vocabulary.RDF;
-import org.doremus.diaboloConverter.RomanConverter;
 import org.doremus.diaboloConverter.files.Interp;
 import org.doremus.diaboloConverter.files.Oeuvre;
 import org.doremus.ontology.CIDOC;

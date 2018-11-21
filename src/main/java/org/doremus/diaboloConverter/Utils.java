@@ -1,5 +1,6 @@
 package org.doremus.diaboloConverter;
 
+import io.github.pasqlisena.RomanConverter;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.jena.datatypes.xsd.XSDDatatype;
 import org.apache.jena.query.*;
